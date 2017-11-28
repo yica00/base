@@ -237,7 +237,7 @@ class FrontController extends Controller
         return view('front.environ',compact('articles'));
     }
     public function env(){
-        $articles = Article::where('pid',11)->get();
+        $articles = Article::where('pid',11)->orderBy('serial_number','desc')->get();
         return view('front.environ',compact('articles'));
     }
 
