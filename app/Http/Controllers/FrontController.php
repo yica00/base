@@ -84,7 +84,9 @@ class FrontController extends Controller
         $articles = Article::with('articles')->where('pid',6)
             ->orderBy('id','asc')->take(3)->get();
         foreach ( $articles as $k=>$article ){
-            $articles[$k]->ims = get_article_imgs($article->articles[0],2)[0];
+            $pattern = "/(?:\/Uploads).*?(?=\")/";
+            preg_match_all($pattern,$article->articles[0]->comtent,$matches);
+            $articles[$k]->ims = $matches[0];
         }
         return $articles;
     }
