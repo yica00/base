@@ -19,7 +19,7 @@
           @if( $art->id == $id ) on @endif
           @endif
                   ">
-            <a href="@if( $art->link ){{$art->link}}@else{{$cate->link}}/category/{{$art->id}}@endif">{{$art->title}}</a>
+            <a href="{{$cate->link}}/category/{{$art->id}}">{{$art->title}}</a>
           </li>
         @endforeach
       @endif

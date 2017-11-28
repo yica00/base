@@ -38,10 +38,19 @@
 <div class="nav_box">
     <div class="w1160">
         <ul id="nav" class="nav clearfix">
-            @foreach( session('header_nav') as $navs )
+            @foreach( session('header_nav') as $k=>$navs )
                 <li class="nLi @if( session('urls') == $navs->link )on @endif">
                     <h3><a href="{{$navs->link}}">{{$navs->title}}<span>{{$navs->introduce}}</span></a></h3>
                     @if( $navs->articles )
+                        @if( $k == 3 )
+                            <ul class="sub">
+                                @foreach( $navs->articles as $arti )
+                                    <li>
+                                        <a href="{{$navs->link}}/category/{{$arti->id}}">{{$arti->title}}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                         @else
                         <ul class="sub">
                             @foreach( $navs->articles as $arti )
                                 <li>
@@ -49,6 +58,7 @@
                                 </li>
                             @endforeach
                         </ul>
+                        @endif
                     @endif
                 </li>
             @endforeach
