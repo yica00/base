@@ -58,39 +58,23 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">教育背景</label>
+                                <label for="email" class="col-md-4 control-label">荣誉</label>
                                 <div class="col-md-6">
-                                    <input id="email"  class="form-control" name="education" value="{{  $team->education }}"  autofocus>
+                                    <textarea class="form-control" rows="3" name="honor" >{{$team->honor}}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">擅长风格</label>
+                                <label for="email" class="col-md-4 control-label">擅长项目</label>
                                 <div class="col-md-6">
-                                    <input id="email"  class="form-control" name="good_at"  value="{{  $team->good_at }}" autofocus>
+                                    <textarea class="form-control" rows="4" name="good_at" >{{$team->good_at}}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">设计理念</label>
+                                <label for="email" class="col-md-4 control-label">简介</label>
                                 <div class="col-md-6">
-                                    <input id="email"  class="form-control" name="design_concept" value="{{  $team->design_concept }}" autofocus>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">项目经验</label>
-                                <div class="col-md-6">
-                                    <textarea class="form-control" rows="5" name="introduce" >{{  $team->introduce }}</textarea>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">主要作品</label>
-                                <div class="col-md-6">
-                                    @foreach( $articles as $art )
-                                        <input type="checkbox" name="production[]" value="{{ $art->id }}" @if( in_array($art->id ,$team->production) )checked @endif /> {{$art->title}}
-                                    @endforeach
+                                    <textarea class="form-control" rows="5" name="introduce" >{{$team->introduce}}</textarea>
                                 </div>
                             </div>
 

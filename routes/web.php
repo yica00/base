@@ -43,6 +43,10 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('active','FrontController@active_list');
         Route::get('active/{id}','FrontController@active_dedail');
 
+        Route::get('item','FrontController@item');
+        Route::get('item/category/{id}','FrontController@item');
+        Route::get('item/{id}','FrontController@item_detail');
+
         Route::get('join','FrontController@join_detail');
         Route::get('join/category/{id}','FrontController@join_detail');
         Route::get('join/suply','FrontController@join_suply');
@@ -55,6 +59,9 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('team','FrontController@team');
         Route::get('team/{id}','FrontController@team_detail');
 
+        Route::get('equipment','FrontController@equipment');
+        Route::get('equipment/{id}','FrontController@equipment_detail');
+
         Route::get('product','FrontController@product');
         Route::get('product/category/{id}','FrontController@product');
         Route::get('product/{id}','FrontController@product_detail');
@@ -66,7 +73,7 @@ Route::group(['middleware'=>'check_setting'],function (){
 
 
         Route::get('contact','FrontController@contact');
-        Route::get('contact/message','FrontController@message');
+        Route::get('contact/order','FrontController@message');
 
         Route::post('/front/message','Admin\MessageController@store');
         Route::any('/search','FrontController@search');

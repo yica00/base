@@ -24,4 +24,7 @@ class Article extends Model
     public function order_lists(){
         return $this->belongsTo('App\Models\Admin\Order_list','article_id','id');
     }
+    public function team(){
+        return $this->belongsTo('App\Models\Admin\Teams','link','id');
+    }
 }
