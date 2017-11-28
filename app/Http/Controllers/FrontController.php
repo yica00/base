@@ -318,7 +318,10 @@ class FrontController extends Controller
     public function our_case(  ){
         $articles = Article::with('articles')->where('pid',6)->orderBy('id','asc')->paginate(6);
         foreach ( $articles as $k=>$article ){
-            $articles[$k]->ims = get_article_imgs($article->articles[0],2)[0];
+            $pattern = "/(?:\/Uploads).*?(?=\")/";
+            preg_match_all($pattern,$article->articles[0]->comtent,$matches);
+            $articles[$k]->ims = $matches[0];
+//            $articles[$k]->ims = get_article_imgs($article->articles[0],2)[0];
         }
         $pages = getPage($articles,6);
         return view('front.case',compact('articles','pages','id'));
