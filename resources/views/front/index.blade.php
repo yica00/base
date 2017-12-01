@@ -259,7 +259,7 @@
         <ul class="equip_out clearfix">
           @foreach( $equipments as $equipment )
           <li>
-            <a href="/equipment/{{$equipment->id}}">
+            <a href="/equipment">
               <img src="{{$equipment->thumbnail}}">
               <p>{{$equipment->title}}</p>
             </a>
