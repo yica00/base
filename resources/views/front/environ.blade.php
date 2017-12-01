@@ -46,7 +46,7 @@
     </script>
     <div class="tea_act_one clearfix" id="product_big">
       @foreach( $articles as $article )
-      <a rel="images_group" href="{{$article->thumbnail}}"><img src="{{$article->thumbnail}}" alt=""><div class="txt">{{$article->title}}</div></a>
+      <a rel="images_group" ><img src="{{$article->thumbnail}}" alt=""><div class="txt">{{$article->title}}</div></a>
       @endforeach
     </div>
     <div class="pageJump clearfix">
