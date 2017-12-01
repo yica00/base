@@ -341,7 +341,7 @@
         <span class="mb2">&nbsp;</span>
         <div class="clearfix">
           <a href="/news/@if( isset( $noliges[10] )){{$noliges[10]->id}} @endif " style="background: #34a9cc;line-height: 88px;width: 128px;" class="fr">@if( isset( $noliges[10] )) {{$noliges[10]->title}} @endif</a>
-        <a href="/news/@if( isset( $noliges[11] )){{$noliges[11]->id}} @endif " style="background: #ffa801;line-height: 88px;width: 70px;" class="fl">@if( isset( $noliges[11] )) {{$noliges[12]->title}} @endif</a>
+        <a href="/news/@if( isset( $noliges[11] )){{$noliges[11]->id}} @endif " style="background: #ffa801;line-height: 88px;width: 70px;" class="fl">@if( isset( $noliges[11] )) {{$noliges[11]->title}} @endif</a>
         </div>
       </div>
       <div class="w110 fl mR2">
