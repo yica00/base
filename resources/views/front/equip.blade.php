@@ -15,7 +15,7 @@
     <ul class="equip_out equip_in_list clearfix">
       @foreach( $articles as $article )
       <li>
-        <a href="/equipment/{{$article->id}}">
+        <a >
           <img src="{{$article->thumbnail}}">
           <p>{{$article->title}}</p>
         </a>
