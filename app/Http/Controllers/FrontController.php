@@ -82,7 +82,7 @@ class FrontController extends Controller
     }
     public function getCases(){
         $articles = Article::with('articles')->where('pid',6)
-            ->orderBy('id','asc')->take(3)->get();
+            ->orderBy('id','asc')->take(4)->get();
         foreach ( $articles as $k=>$article ){
             $pattern = "/(?:\/Uploads).*?(?=\")/";
             preg_match_all($pattern,$article->articles[0]->comtent,$matches);
