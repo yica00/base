@@ -132,7 +132,8 @@
     <div class="contact_box">
       <dl>
         <dt>联系电话</dt>
-        <dd>{{ session('setting')['fix_phone']  }}</dd>
+        <dd>座机：{{ session('setting')['fix_phone']  }}</dd>
+        <dd>手机：{{ session('setting')['phone']  }}</dd>
       </dl>
       <dl>
         <dt>在线咨询</dt>

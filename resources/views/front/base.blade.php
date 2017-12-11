@@ -106,7 +106,8 @@
         <div class="add fl">
             <dl>
                 <dt>预约咨询</dt>
-                <dd>{{ session('setting')['fix_phone']  }}</dd>
+                <dd>座机：{{ session('setting')['fix_phone']  }}</dd>
+                <dd>手机：{{ session('setting')['phone']  }}</dd>
             </dl>
             <span class="bk10">&nbsp;</span>
             <dl>
