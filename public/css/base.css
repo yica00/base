@@ -325,7 +325,7 @@ body{background-color:white;overflow-x:hidden;font-size:16px;color:#333;
 .footer .fot_logo{width: 290px;padding: 35px 0 0;}
 .footer .fot_logo a{width: 250px;height: 80px;display: inline-block;
   background: url(/images/fot_logo.png) left center no-repeat;}
-.footer .add{width: 436px;border: 2px solid #28a7e1;height: 120px;text-align: center;padding: 26px 0 0;}
+.footer .add{width: 436px;border: 2px solid #28a7e1;height: 230px;text-align: center;padding: 26px 0 0;}
 .footer .add dt{font-weight: bold;color: #fff;}
 .footer .add dd{color: #fff;}
 .footer .ewm{width: 400px;}
