@@ -6,7 +6,7 @@
   <div class="bd">
     <ul>
       @foreach( $sliders as $slider )
-      <li><a href="" style="background:url({{$slider->thumbnail}}) center no-repeat;">&nbsp;</a></li>
+      <li><a href="{{$slider->link}}" style="background:url({{$slider->thumbnail}}) center no-repeat;">&nbsp;</a></li>
       @endforeach
     </ul>
   </div>
