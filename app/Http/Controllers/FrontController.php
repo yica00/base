@@ -129,7 +129,8 @@ class FrontController extends Controller
     }
     public function getSliders()
     {
-        $sons = Article::select('thumbnail','link','id','pid')->where('pid',29)->get();
+        $sons = Article::select('thumbnail','link','id','pid')->where('pid',29)
+            ->orderBy('id','desc')->orderBy('serial_number','desc')->get();
         return $sons;
     }
     public function getTeams()
