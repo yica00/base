@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Session;
 
 class FrontController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $sliders = $this->getSliders();
         $items = $this->getItem();
@@ -257,7 +257,7 @@ class FrontController extends Controller
 
     public function item( $id=16 )
     {
-        $article = Article::with('articles')->where('id', $id)->find($id);
+        $article = Article::with('articles')->find($id);
         return view('front.item', compact('article', 'id'));
     }
     public function item_detail($id){
@@ -269,14 +269,14 @@ class FrontController extends Controller
     public function equipment()
     {
         $articles = Article::with('articles')->where('pid', 7)->paginate(8);
-        $pages = getPage($articles,8);
-        return view('front.equip', compact('articles', 'pages'));
+//        $pages = getPage($articles,8);
+        return view('front.wap.equip', compact('articles', 'pages'));
     }
     public function equipment_detail($id){
         $article = Article::find($id);
         $up_down = get_up_down_page($id,$article->pid);
         $pid = $article->pid;
-        return view('front.equip_in',compact('pid','article','up_down'));
+        return view('front.wap.equip_in',compact('pid','article','up_down'));
     }
 
 
@@ -331,7 +331,6 @@ class FrontController extends Controller
     }
     public function case_detail($id){
         $article = Article::with('articles')->find($id);
-
         foreach ( $article->articles as $k=>$artic ){
             $img = [];
             $pattern = "/(?:\/Uploads).*?(?=\")/";
