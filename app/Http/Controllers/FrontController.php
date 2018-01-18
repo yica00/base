@@ -269,7 +269,7 @@ class FrontController extends Controller
     public function equipment()
     {
         $articles = Article::with('articles')->where('pid', 7)->paginate(8);
-//        $pages = getPage($articles,8);
+        $pages = getPage($articles,8);
         return view('front.equip', compact('articles', 'pages'));
     }
     public function equipment_detail($id){
