@@ -270,13 +270,13 @@ class FrontController extends Controller
     {
         $articles = Article::with('articles')->where('pid', 7)->paginate(8);
 //        $pages = getPage($articles,8);
-        return view('front.wap.equip', compact('articles', 'pages'));
+        return view('front.equip', compact('articles', 'pages'));
     }
     public function equipment_detail($id){
         $article = Article::find($id);
         $up_down = get_up_down_page($id,$article->pid);
         $pid = $article->pid;
-        return view('front.wap.equip_in',compact('pid','article','up_down'));
+        return view('front.equip_in',compact('pid','article','up_down'));
     }
 
 
