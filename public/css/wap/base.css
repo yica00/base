@@ -1,7 +1,7 @@
 @charset "utf-8";
-/* CSS Document */ 
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;} 
-h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;} 
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
 ul,li{list-style:none; margin:0; padding:0;}
 a img{border:0;display: block;}
 html, body {height: auto; }
@@ -16,7 +16,7 @@ body{background:#fff;overflow-x:hidden;font-size:.6rem;color: #000;
   font-family: "微软雅黑",Verdana, Arial, Helvetica, sans-serif;}
 html,body{height:auto;width: 100%;max-width: 720px;min-width: 320px;margin: 0 auto;}
 /*颜色字体设置-end-*/
-/******base*******/ 
+/******base*******/
 .bk10,.bk20,.bk30,.bk40,.bk40s,.bk50,.bk60,.bk70,.bk80,.bk90,.bk100{width:100%;overflow: hidden;clear: both;display: block;}
 .bk10{height:.25rem;}
 .bk20{height:.5rem;}
@@ -37,22 +37,22 @@ html,body{height:auto;width: 100%;max-width: 720px;min-width: 320px;margin: 0 au
 .pL10{padding-left:.25rem;}
 .pR10{padding-right:.25rem;}
 .p10{ padding:.25rem;}
-/******other*******/ 
+/******other*******/
 .fl{float:left;display: inline-block;}
 .fr{float:right;display: inline-block;}
-/******clear float*******/ 
-.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } 
-.clearfix {display: inline-table;} 
-/* Hides from IE-mac \*/ 
-* html .clearfix {height: 1%;} 
-.clearfix {display: block;} 
+/******clear float*******/
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix {display: inline-table;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
 /*通用*/
 /*btn 48px svg*/
 .header{background: #fff;padding: 0 .5rem;height: 2rem;}
-.header .logo{width:30%;height:2rem;background: url(/images/wap/logo.png) no-repeat center;background-size: contain;display: block;margin: 0 auto;}
-.header .back{width:100%;height:2rem;background: url(/images/wap/back.svg) no-repeat left center;background-size: contain;display: block;}
+.header .logo{width:50%;height:2rem;background: url(/images/logo.png) no-repeat center;background-size: contain;display: block;margin: 0 auto;}
+.header .back{width:100%;height:2rem;background: url(/images/back.svg) no-repeat left center;background-size: contain;display: block;}
 .header .tit{text-align: center;line-height: 2rem;color: #0e6eb8;font-size: .8rem;}
-.header .menu{width:100%;height:2rem;background: url(/images/wap/menu.svg) no-repeat right center;background-size: contain;display: block;}
+.header .menu{width:100%;height:2rem;background: url(/images/menu.svg) no-repeat right center;background-size: contain;display: block;}
 .header .col-xs-1,.header .col-xs-10{padding: 0;}
 .header .disnone{display: none;}
 
@@ -61,13 +61,13 @@ html,body{height:auto;width: 100%;max-width: 720px;min-width: 320px;margin: 0 au
 #popmenu{display:block; position:relative;height: 2rem;line-height:2rem;}
 #popmenu span{display: inline-block;width:1rem;height:2rem;margin: 0 0 0 0;
   position: absolute;top:0px;
-  background: url(/images/wap/btn_bot.svg) center no-repeat;background-size: contain;}
+  background: url(/images/btn_bot.svg) center no-repeat;background-size: contain;}
 #overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;opacity:0;filter:alpha(opacity=0);display:none;z-index: 4;}
 #win{position: fixed;top:2rem;left:0%;width: 100%;display:none;z-index: 5;}
 .dropdown {position: relative;display:block;margin: 0 auto;}
 .dropdown li{display: block;height: 1.25rem;width: 100%;overflow: hidden;margin: 0;}
 .dropdown li a{background: #fff;text-align: center;line-height: 1.25rem;color: #000;font-size: .6rem;
-    display: block;height:1.25rem;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+  display: block;height:1.25rem;-webkit-tap-highlight-color:rgba(0,0,0,0);}
 .dropdown li:hover a,.dropdown li.on a{background: #0e6eb8;color: #fff;}
 /*mask*/
 .cd-bouncy-nav-modal {position: fixed;z-index:99999999999999999;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(36, 35, 37, 0.9);opacity: 0;visibility: hidden;
@@ -75,7 +75,7 @@ html,body{height:auto;width: 100%;max-width: 720px;min-width: 320px;margin: 0 au
 .cd-bouncy-nav-modal.fade-in{visibility: visible;opacity: 1;-webkit-transition: opacity 0.1s 0s, visibility 0s 0s;-moz-transition: opacity 0.1s 0s, visibility 0s 0s;transition: opacity 0.1s 0s, visibility 0s 0s;}
 .cd-bouncy-nav-modal .cd-close {display: block;position: fixed;top: .5rem;right: 5%;width: 2rem;height: 2rem;
   /* image replacement */
-  overflow: hidden;text-indent: 100%; white-space: nowrap; background: url(/images/wap/close.svg) no-repeat center center;background-size: cover;
+  overflow: hidden;text-indent: 100%; white-space: nowrap; background: url(/images/close.svg) no-repeat center center;background-size: cover;
   -webkit-transform: scale(0) translateZ(0);-moz-transform: scale(0) translateZ(0);-ms-transform: scale(0) translateZ(0);-o-transform: scale(0) translateZ(0);transform: scale(0) translateZ(0);
   -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0.3s;
   -moz-transition: -moz-transform 0.3s 0s, visibility 0s 0.3s;
@@ -104,14 +104,14 @@ html,body{height:auto;width: 100%;max-width: 720px;min-width: 320px;margin: 0 au
 .fade-in .cd-bouncy-nav li:nth-of-type(8), .fade-out .cd-bouncy-nav li:nth-of-type(8) {-webkit-animation-delay: 0.45s;-moz-animation-delay: 0.45s;animation-delay: 0.45s;}
 .cd-bouncy-nav a {display: inline-block;min-width: 80px;position: relative;padding:84px 20px 0; margin-bottom: 30px;color: #ffffff;font-size: 0.6rem;}
 /*btns svg 48px*/
-.fade-in .cd-bouncy-nav li:nth-of-type(1) a::before{background:#000 url(/images/wap/nav_home.svg) center no-repeat;}
-.fade-in .cd-bouncy-nav li:nth-of-type(2) a::before{background:#000 url(/images/wap/nav_kp.svg) center no-repeat;}
-.fade-in .cd-bouncy-nav li:nth-of-type(3) a::before{background:#000 url(/images/wap/nav_news.svg) center no-repeat;}
-.fade-in .cd-bouncy-nav li:nth-of-type(4) a::before{background:#000 url(/images/wap/nav_dy.svg) center no-repeat;}
-.fade-in .cd-bouncy-nav li:nth-of-type(5) a::before{background:#000 url(/images/wap/nav_hd.svg) center no-repeat;}
-.fade-in .cd-bouncy-nav li:nth-of-type(6) a::before{background:#000 url(/images/wap/nav_zt.svg) center no-repeat;}
-.fade-in .cd-bouncy-nav li:nth-of-type(7) a::before{background:#000 url(/images/wap/nav_us.svg) center no-repeat;}
-.fade-in .cd-bouncy-nav li:nth-of-type(8) a::before{background:#000 url(/images/wap/nav_kf.svg) center no-repeat;}
+.fade-in .cd-bouncy-nav li:nth-of-type(1) a::before{background:#000 url(/images/nav_home.svg) center no-repeat;}
+.fade-in .cd-bouncy-nav li:nth-of-type(2) a::before{background:#000 url(/images/nav_kp.svg) center no-repeat;}
+.fade-in .cd-bouncy-nav li:nth-of-type(3) a::before{background:#000 url(/images/nav_news.svg) center no-repeat;}
+.fade-in .cd-bouncy-nav li:nth-of-type(4) a::before{background:#000 url(/images/nav_dy.svg) center no-repeat;}
+.fade-in .cd-bouncy-nav li:nth-of-type(5) a::before{background:#000 url(/images/nav_hd.svg) center no-repeat;}
+.fade-in .cd-bouncy-nav li:nth-of-type(6) a::before{background:#000 url(/images/nav_zt.svg) center no-repeat;}
+.fade-in .cd-bouncy-nav li:nth-of-type(7) a::before{background:#000 url(/images/nav_us.svg) center no-repeat;}
+.fade-in .cd-bouncy-nav li:nth-of-type(8) a::before{background:#000 url(/images/nav_kf.svg) center no-repeat;}
 .cd-bouncy-nav a::before {content: '';display: block;position: absolute;top: 0;left: 50%;right: auto;
   -webkit-transform: translateX(-50%);-moz-transform: translateX(-50%);-ms-transform: translateX(-50%);-o-transform: translateX(-50%);transform: translateX(-50%);
   height: 80px;width: 80px;border-radius: 50%;background-size: contain;}
@@ -185,7 +185,7 @@ html,body{height:auto;width: 100%;max-width: 720px;min-width: 320px;margin: 0 au
 .team_in_list li{width: 50%;height:auto;float: left;padding: 0 .25rem;margin: 0 0 .5rem;}
 .team_in_list li a{display: block;width: 100%;height: 11rem;position: relative;overflow: hidden;}
 .team_in_list li a img{width: 100%;height: 11rem;display: block;}
-.team_in_list li a .txt{background: url(/images/wap/mask_blue.png) repeat;height:2rem;position: absolute;left: 0;bottom: 0;z-index: 999;width: 100%;display: block;}
+.team_in_list li a .txt{background: url(/images/mask_blue.png) repeat;height:2rem;position: absolute;left: 0;bottom: 0;z-index: 999;width: 100%;display: block;}
 .team_in_list li a .txt h2{text-align: center;line-height: 1rem;font-size:.6rem;color: #fff;}
 .team_in_list li a .txt p{padding: 0 .25rem;color: #fff;text-align: center;}
 
@@ -367,7 +367,7 @@ html,body{height:auto;width: 100%;max-width: 720px;min-width: 320px;margin: 0 au
     
     空格  span style='white-space:pre;
     背景  background:transparent;   透明
-          background: url(/images/wap/phone.png) left center no-repeat;
+          background: url(/images/phone.png) left center no-repeat;
           background: radial-gradient(white, #EEF6F9);   渐变
           background-attachment: fixed;    背景固定
           background-clip:content-box;     背景裁剪  border-box 背景被裁剪到边框盒。 padding-box 背景被裁剪到内边距框。 content-box 背景被裁剪到内容框。
@@ -451,12 +451,12 @@ animation 动画示例
 
 /*
 <div class="parallax-image-wrapper" data-anchor-target="#page-intro" data-bottom-top="transform:translateY(200%)" data-top-bottom="transform:translateY(0)">
-    <div class="parallax-image" style="background-image:url(asse/images/wap/coast.jpg)" data-anchor-target="#page-intro" 
+    <div class="parallax-image" style="background-image:url(asse/images/coast.jpg)" data-anchor-target="#page-intro" 
          data-bottom-top="transform: translateY(-80%);" data-top-bottom="transform: translateY(80%);">
     </div>
 </div>
 <div id="skrollr-body">
-    <div id="page-intro" class="gap" style="background-image:url(asse/images/wap/coast.jpg); ">
+    <div id="page-intro" class="gap" style="background-image:url(asse/images/coast.jpg); ">
         <h1>使用6种不同视觉差特效的HTML5页面设计效果</h1>
     </div>
     <div class="dummy-content">

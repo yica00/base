@@ -72,6 +72,7 @@
 
 <!-- footer -->
 <div class="footer">
+    <img src="images/fot_logo.png">
     <div class="ewm">
         <img src="{{ session('setting')['wx_map']  }}">
         <p>扫描二维码关注我们</p>
