@@ -103,7 +103,7 @@
         <div class="fot_logo fl">
             <a href="/">&nbsp;</a>
         </div>
-        <div class="add fl">
+        <div class="add fl" style="height: 240px">
             <dl>
                 <dt>预约咨询</dt>
                 <dd>座机：{{ session('setting')['fix_phone']  }}</dd>
