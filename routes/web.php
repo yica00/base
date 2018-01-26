@@ -79,6 +79,7 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('service/category/{id}','FrontController@service');
 
         Route::get('budge','FrontController@budge');
+        Route::get('contact/way','FrontController@way');
 
 
         Route::get('contact','FrontController@contact');
@@ -134,6 +135,7 @@ Route::group(['middleware'=>'check_setting'],function (){
             Route::get('compus/{id}','WapController@compus');
             Route::get('honor','WapController@honor');
             Route::get('honor/{id}','WapController@honor_detail');
+
 
             Route::get('contact','WapController@contact');
             Route::get('order','WapController@message');

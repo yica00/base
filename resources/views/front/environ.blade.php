@@ -1,5 +1,6 @@
 @extends('front.base')
 @section('content')
+    <link rel="stylesheet" href="/css/paginate.css">
 <!-- banner -->
   
 <div class="bread">
@@ -10,7 +11,7 @@
 </div>
 <ul class="sublist">
     @foreach( session('header_nav') as $cate )
-        @if( $cate->id == 7 )
+        @if( $cate->id == 5 )
             @foreach( $cate->articles as $art )
                 <li class=" @if( $art->id == $id ) on @endif">
                     <a href="@if( $art->link ){{$art->link}}@else{{$cate->link}}/category/{{$art->id}}@endif" >{{$art->title}}</a>
@@ -22,8 +23,8 @@
 <!--  -->
 <div class="txt_demo_1">
   <div class="w1160 clearfix">
-    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css" media="screen">
-    <script type="text/javascript" src="js/jquery.fancybox-1.3.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css" media="screen">
+    <script type="text/javascript" src="/js/jquery.fancybox-1.3.4.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
          
@@ -38,64 +39,19 @@
       });
     </script>
     <ul class="env_list clearfix">
+        @foreach( $articles as $article )
       <li>
-          <a rel="images_group" href="images/hj1.jpg">
-            <div class="pic"><img src="images/hj3.jpg"></div>
-            <div class="txt">环境名称</div>
+          <a rel="images_group" href="{{$article->thumbnail}}">
+            <div class="pic"><img src="{{$article->thumbnail}}"></div>
+            <div class="txt">{{$article->title}}</div>
         </a>
       </li>
-      <li>
-          <a rel="images_group" href="images/hj1.jpg">
-            <div class="pic"><img src="images/hj3.jpg"></div>
-            <div class="txt">环境名称</div>
-        </a>
-      </li>
-      <li>
-          <a rel="images_group" href="images/hj1.jpg">
-            <div class="pic"><img src="images/hj3.jpg"></div>
-            <div class="txt">环境名称</div>
-        </a>
-      </li>
-      <li>
-          <a rel="images_group" href="images/hj1.jpg">
-            <div class="pic"><img src="images/hj3.jpg"></div>
-            <div class="txt">环境名称</div>
-        </a>
-      </li>
-      <li>
-          <a rel="images_group" href="images/hj1.jpg">
-            <div class="pic"><img src="images/hj3.jpg"></div>
-            <div class="txt">环境名称</div>
-        </a>
-      </li>
-      <li>
-          <a rel="images_group" href="images/hj1.jpg">
-            <div class="pic"><img src="images/hj3.jpg"></div>
-            <div class="txt">环境名称</div>
-        </a>
-      </li>
-      <li>
-          <a rel="images_group" href="images/hj1.jpg">
-            <div class="pic"><img src="images/hj3.jpg"></div>
-            <div class="txt">环境名称</div>
-        </a>
-      </li>
-      <li>
-          <a rel="images_group" href="images/hj1.jpg">
-            <div class="pic"><img src="images/hj3.jpg"></div>
-            <div class="txt">环境名称</div>
-        </a>
-      </li>
+        @endforeach
+
     </ul>
-    <div class="pageJump clearfix">
-      <div class="number">
-          <span class="disabled"><a href="">上一页</a></span>
-          <span class="disabled"><a href="">1</a></span>
-          <span class="disabled"><a href="">2</a></span>
-          <span class="disabled"><a href="">3</a></span>
-          <span class="disabled"><a href="">下一页</a></span>
-      </div>
-    </div>
+
+
+      {{$articles->links()}}
   </div>
 </div>
 <span class="bk60">&nbsp;</span>

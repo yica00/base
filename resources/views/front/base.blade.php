@@ -79,11 +79,11 @@
                     </div>
                 </div>
             </div>
-            <a href="/" class="fot_lg fl">&nbsp;</a>
-            <div class="call fl"><h2>{{ session('setting')['fix_phone']  }}</h2><p>慧尚老师咨询电话</p></div>
+            <a href="/contact/order" class="fot_lg fl">&nbsp;</a>
+            <div class="call fl"><h2>{{ session('setting')['fix_phone']  }}</h2><p>老师咨询电话</p></div>
             <div class="zixun fl">
                 <div class="clearfix">
-                    <a class="p1 fr" href="">
+                    <a class="p1 fr" href="/contact/order">
                         <img src="/images/zaix.png">
                     </a>
                     <div class="p2 fl">
@@ -105,17 +105,17 @@
 <!-- float_fix -->
 <div class="float_fix">
     <div class="top">
-        <a href="" class="a1">小学辅导</a>
-        <a href="" class="a2">初中辅导</a>
-        <a href="" class="a3">高中辅导</a>
-        <a href="" class="a4">校区地址</a>
-        <a href="" class="a5">在线报名</a>
+        <a href="/contact/order" class="a1">小学辅导</a>
+        <a href="/contact/order" class="a2">初中辅导</a>
+        <a href="/contact/order" class="a3">高中辅导</a>
+        <a href="/contact/order" class="a4">校区地址</a>
+        <a href="/contact/order" class="a5">在线报名</a>
         <div class="call">
             <p>咨询热线</p>
             <p>{{ session('setting')['fix_phone']  }}</p>
         </div>
     </div>
-    <a class="bot" href="" onclick="javascript:scroll(0,0)">&nbsp;</a>
+    <a class="bot" href="/contact/order" onclick="javascript:scroll(0,0)">&nbsp;</a>
 </div>
 <!-- time -->
 <script src="/js/wow.min.js"></script>

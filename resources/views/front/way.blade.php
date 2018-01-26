@@ -9,9 +9,15 @@
   <p class="p2">&nbsp;</p>
 </div>
 <ul class="sublist">
-  <li><a href="contact.html">人才招聘</a></li>
-              <li><a href="online.html">在线报名</a></li>
-              <li class="on"><a href="way.html">联系方式</a></li>       
+  @foreach( session('header_nav') as $cate )
+    @if( $cate->id == 7 )
+      @foreach( $cate->articles as $art )
+        <li class="@if( \Illuminate\Support\Facades\Request::getRequestUri() == $art->link ) on @endif">
+          <a href="@if( $art->link ){{$art->link}}@else{{$cate->link}}/category/{{$art->id}}@endif" >{{$art->title}}</a>
+        </li>
+      @endforeach
+    @endif
+  @endforeach
 </ul>
 <!--  -->
 <div class="txt_demo_5">
@@ -22,25 +28,19 @@
     <div class="contact_way">
       <dl>
         <dt>报名热线</dt>
-        <dd>0817-2271055</dd>
+        <dd>{{ session('setting')['fix_phone']  }}</dd>
       </dl>
       <dl>
         <dt>咨询热线</dt>
-        <dd>135 1828 3140 </dd>
+        <dd>{{ session('setting')['phone']  }}</dd>
       </dl>
+      @foreach( $articles as $article )
       <dl class="big">
-        <dt>顺庆区</dt>
-        <dd>南充市顺庆区凤鸣路6号（佳兆业商业广场）</dd>
+        <dt>{{$article->title}}</dt>
+        <dd>{{$article->introduce}}</dd>
       </dl>
-      <dl class="big">
-        <dt>嘉陵区</dt>
-        <dd>南充市顺庆区凤鸣路6号（佳兆业商业广场）</dd>
-      </dl>
-      <dl class="big">
-        <dt>高坪区</dt>
-        <dd>南充市顺庆区凤鸣路6号（佳兆业商业广场）</dd>
-      </dl>
-      
+      @endforeach
+
     </div>
     <script type="text/javascript">
     //创建和初始化地图函数：
@@ -54,7 +54,7 @@
     //创建地图函数：
     function createMap(){
         var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
-        var point = new BMap.Point(106.103797,30.815895);//定义一个中心点坐标
+        var point = new BMap.Point({{ explode( ',',session('setting')['bases_xy'] )[0] }},{{ explode( ',',session('setting')['bases_xy'] )[1] }});//定义一个中心点坐标
         map.centerAndZoom(point,14);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map;//将map变量存储在全局
     }
@@ -81,7 +81,7 @@
     }
     
     //标注点数组
-    var markerArr = [{title:"延安路店",content:"地址；南充市顺庆区延安路114--116号（北城派出所斜对面）",point:"106.104528|30.807425",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+    var markerArr = [{title:"慧尚教育",content:"{{ session('setting')['bases']  }}",point:"{{ explode( ',',session('setting')['bases_xy'] )[0] }}|{{ explode( ',',session('setting')['bases_xy'] )[1] }}",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
      ];
     //创建marker
     function addMarker(){
