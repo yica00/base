@@ -1,36 +1,29 @@
 @extends('front.base')
 @section('content')
-<!-- bread -->
+<!-- banner -->
+  
 <div class="bread">
-  <div class="in_tit_all">
-    <div class="w1160 clearfix">
-      <h2><span>Brand center</span></h2>
-      <p><span>品牌中心</span></p> 
-    </div>
-  </div>
-  <ul class="sublist">
-    @foreach( session('header_nav') as $cate )
-      @if( $cate->id == 2 )
-        @foreach( $cate->articles as $art )
-          <li  class="
-              @if( $art->link )
-          @if( \Illuminate\Support\Facades\Request::getRequestUri() == $art->link ) on @endif
-          @else
-          @if( $art->id == $pid ) on @endif
-          @endif
-                  ">
-            <a href="@if( $art->link ){{$art->link}}@else{{$cate->link}}/category/{{$art->id}}@endif">{{$art->title}}</a>
-          </li>
-        @endforeach
-      @endif
-    @endforeach
-  </ul>
+  <span class="bk30">&nbsp;</span>
+  <h2>learning environment</h2>
+  <p class="p1">学习环境</p>
+  <p class="p2">&nbsp;</p>
 </div>
-<div class="wap_box">
+<ul class="sublist">
+    @foreach( session('header_nav') as $cate )
+        @if( $cate->id == 7 )
+            @foreach( $cate->articles as $art )
+                <li class=" @if( $art->id == $id ) on @endif">
+                    <a href="@if( $art->link ){{$art->link}}@else{{$cate->link}}/category/{{$art->id}}@endif" >{{$art->title}}</a>
+                </li>
+            @endforeach
+        @endif
+    @endforeach
+</ul>
+<!--  -->
+<div class="txt_demo_1">
   <div class="w1160 clearfix">
-    <!-- 内容 -->
-    <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css" media="screen">
-    <script type="text/javascript" src="/js/jquery.fancybox-1.3.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css" media="screen">
+    <script type="text/javascript" src="js/jquery.fancybox-1.3.4.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
          
@@ -44,22 +37,67 @@
         });
       });
     </script>
-    <div class="tea_act_one clearfix" id="product_big">
-      @foreach( $articles as $article )
-      <a rel="images_group" href="{{$article->thumbnail}}"><img src="{{$article->thumbnail}}" alt=""><div class="txt">{{$article->title}}</div></a>
-      @endforeach
-    </div>
+    <ul class="env_list clearfix">
+      <li>
+          <a rel="images_group" href="images/hj1.jpg">
+            <div class="pic"><img src="images/hj3.jpg"></div>
+            <div class="txt">环境名称</div>
+        </a>
+      </li>
+      <li>
+          <a rel="images_group" href="images/hj1.jpg">
+            <div class="pic"><img src="images/hj3.jpg"></div>
+            <div class="txt">环境名称</div>
+        </a>
+      </li>
+      <li>
+          <a rel="images_group" href="images/hj1.jpg">
+            <div class="pic"><img src="images/hj3.jpg"></div>
+            <div class="txt">环境名称</div>
+        </a>
+      </li>
+      <li>
+          <a rel="images_group" href="images/hj1.jpg">
+            <div class="pic"><img src="images/hj3.jpg"></div>
+            <div class="txt">环境名称</div>
+        </a>
+      </li>
+      <li>
+          <a rel="images_group" href="images/hj1.jpg">
+            <div class="pic"><img src="images/hj3.jpg"></div>
+            <div class="txt">环境名称</div>
+        </a>
+      </li>
+      <li>
+          <a rel="images_group" href="images/hj1.jpg">
+            <div class="pic"><img src="images/hj3.jpg"></div>
+            <div class="txt">环境名称</div>
+        </a>
+      </li>
+      <li>
+          <a rel="images_group" href="images/hj1.jpg">
+            <div class="pic"><img src="images/hj3.jpg"></div>
+            <div class="txt">环境名称</div>
+        </a>
+      </li>
+      <li>
+          <a rel="images_group" href="images/hj1.jpg">
+            <div class="pic"><img src="images/hj3.jpg"></div>
+            <div class="txt">环境名称</div>
+        </a>
+      </li>
+    </ul>
     <div class="pageJump clearfix">
       <div class="number">
-          {{--<span class="disabled"><a href="">首页</a></span>--}}
-          {{--<span class="disabled"><a href="">上一页</a></span>--}}
-          {{--<span class="disabled"><a href="">下一页</a></span>--}}
-          {{--<span class="disabled"><a href="">末页</a></span>--}}
+          <span class="disabled"><a href="">上一页</a></span>
+          <span class="disabled"><a href="">1</a></span>
+          <span class="disabled"><a href="">2</a></span>
+          <span class="disabled"><a href="">3</a></span>
+          <span class="disabled"><a href="">下一页</a></span>
       </div>
     </div>
-    <!-- end -->
-  </div>  
-  <span class="bk80">&nbsp;</span>
+  </div>
 </div>
-<!-- footer -->
+<span class="bk60">&nbsp;</span>
+<!--  -->
 @endsection

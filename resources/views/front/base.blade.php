@@ -29,110 +29,93 @@
 <!-- header -->
 <div class="header">
     <div class="w1160 clearfix">
-        <a href="/contact/order" class="btn btn_2 fr">预约挂号</a>
-        <span class="btn btn_1 fr">联系电话：{{ session('setting')['fix_phone']  }}</span>
+        <div class="call fr">0817-7896589</div>
         <a href="/" class="logo fl">&nbsp;</a>
-    </div>
-</div>
-<!-- nav -->
-<div class="nav_box">
-    <div class="w1160">
-        <ul id="nav" class="nav clearfix">
-            @foreach( session('header_nav') as $k=>$navs )
-                <li class="nLi @if( session('urls') == $navs->link )on @endif">
-                    <h3><a href="{{$navs->link}}">{{$navs->title}}<span>{{$navs->introduce}}</span></a></h3>
-                    @if( $navs->articles )
-                        @if( $k == 3 )
+        <div class="nav_box fr">
+            <ul id="nav" class="nav clearfix">
+                @foreach( session('header_nav') as $navs )
+                    <li class="nLi @if( session('urls') == $navs->link )on @endif">
+                        <h3><a href="{{$navs->link}}">{{$navs->title}}</a></h3>
+                        @if( $navs->articles )
                             <ul class="sub">
                                 @foreach( $navs->articles as $arti )
-                                    <li>
-                                        <a href="{{$navs->link}}/category/{{$arti->id}}">{{$arti->title}}</a>
-                                    </li>
+                                    <li><a href="@if( $arti->link ){{$arti->link}}@else{{$navs->link}}/category/{{$arti->id}}@endif">{{$arti->title}}</a></li>
                                 @endforeach
                             </ul>
-                         @else
-                        <ul class="sub">
-                            @foreach( $navs->articles as $arti )
-                                <li>
-                                    <a href="@if( $arti->link ){{$arti->link}}@else{{$navs->link}}/category/{{$arti->id}}@endif">{{$arti->title}}</a>
-                                </li>
-                            @endforeach
-                        </ul>
                         @endif
-                    @endif
-                </li>
-            @endforeach
-        </ul>
-        <script id="jsID" type="text/javascript">
-            jQuery("#nav").slide({
-                type:"menu",// 效果类型，针对菜单/导航而引入的参数（默认slide）
-                titCell:".nLi", //鼠标触发对象
-                targetCell:".sub", //titCell里面包含的要显示/消失的对象
-                effect:"slideDown", //targetCell下拉效果
-                delayTime:300 , //效果时间
-                triggerTime:0, //鼠标延迟触发时间（默认150）
-                returnDefault:true //鼠标移走后返回默认状态，例如默认频道是“预告片”，鼠标移走后会返回“预告片”（默认false）
-            });
-        </script>
+                    </li>
+                @endforeach
+            </ul>
+            <script id="jsID" type="text/javascript">
+                jQuery("#nav").slide({
+                    type:"menu",// 效果类型，针对菜单/导航而引入的参数（默认slide）
+                    titCell:".nLi", //鼠标触发对象
+                    targetCell:".sub", //titCell里面包含的要显示/消失的对象
+                    effect:"slideDown", //targetCell下拉效果
+                    delayTime:300 , //效果时间
+                    triggerTime:0, //鼠标延迟触发时间（默认150）
+                    returnDefault:true //鼠标移走后返回默认状态，例如默认频道是“预告片”，鼠标移走后会返回“预告片”（默认false）
+                });
+            </script>
+        </div>
     </div>
 </div>
+<span class="bk80">&nbsp;</span>
 
 
 @yield('content')
 
 <!-- footer -->
 <div class="footer">
+    <span class="bk40">&nbsp;</span>
     <div class="w1160 clearfix">
-        <div class="ewm fr">
-            <div class="clearfix">
-                <div class="txt fr">
-                    <h2>扫一扫，关注我们</h2>
-                    <div class="p1">
-                        <div class="btns">
-                            <a href="tencent://message/?uin={{ session('setting')['qq']  }}&Menu=yes" target="_blank" class="btn_1 mR10"><span>&nbsp;</span></a>
-                            <a  class="btn_2 ewm  mR10"><span>&nbsp;</span><img src="{{ session('setting')['wx_map']  }}"></a>
-                            <a href="/contact/order" class="btn_3  mR10"><span>&nbsp;</span></a>
-                            <a href="/contact" class="btn_4"><span>&nbsp;</span></a>
-                        </div>
+        <div class="clearfix">
+            <div class="ewm fr">
+                <div class="clearfix">
+                    <img src="{{ session('setting')['wx_map']  }}" class="p1 fr">
+                    <div class="p2 fl">
+                        <p>更多教育资讯，</p>
+                        <p>扫一扫关注公众号</p>
                     </div>
-                    <p class="p2">门诊时间（无节假日医院）08:30-20:00</p>
                 </div>
-                <img src="{{ session('setting')['wx_map']  }}" class="pic fl">
+            </div>
+            <a href="/" class="fot_lg fl">&nbsp;</a>
+            <div class="call fl"><h2>{{ session('setting')['fix_phone']  }}</h2><p>慧尚老师咨询电话</p></div>
+            <div class="zixun fl">
+                <div class="clearfix">
+                    <a class="p1 fr" href="">
+                        <img src="/images/zaix.png">
+                    </a>
+                    <div class="p2 fl">
+                        <p>南充一对一辅导</p>
+                        <p>假期班在线咨询</p>
+                        <p>在线老师免费答疑</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="fot_logo fl">
-            <a href="/">&nbsp;</a>
-        </div>
-        <div class="add fl" style="height: 240px">
-            <dl>
-                <dt>预约咨询</dt>
-                <dd>座机：{{ session('setting')['fix_phone']  }}</dd>
-                <dd>手机：{{ session('setting')['phone']  }}</dd>
-            </dl>
-            <span class="bk10">&nbsp;</span>
-            <dl>
-                <dt>门诊地址</dt>
-                <dd>{{ session('setting')['bases']  }}</dd>
-                <dd>有宽敞的停车场地！车位充裕！无需任何停车费用！</dd>
-                <dd>　</dd>
-                <dd>交通便利：周边多条公交路线环绕（2路、15路、31路、36路、40路公交车直达，依城郡对面）公交车到达潆华北路二段，下车后抬头就能看到医院招牌，就在马路对面</dd>
-            </dl>
-        </div>
+        <div class="mid"><img src="/images/slogn.png"></div>
     </div>
-    <span class="bk40">&nbsp;</span>
     <div class="bot">
-        <div class="w1160 clearfix">
-            copyright版权所有◎2017 &nbsp;&nbsp;美健口腔&nbsp;&nbsp;{{ session('setting')['icp']  }}&nbsp;&nbsp;技术支持：<a href="http://www.scnuohang.com/" target="_blank">诺航科技</a>
-        </div>
+        <p>地址: {{ session('setting')['bases']  }}</p>
+        <p>邮箱: {{ session('setting')['qq']  }}@qq.com</p>
+        <p> COPYRIGHT ©2018 ALL RIGHTS RESERVED &nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;{{ session('setting')['icp']  }}&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a href="http://www.scnuohang.com/" target="_blank">诺航科技</a></p>
     </div>
 </div>
-<!-- float -->
-<div class="float_onlie">
-    <a class="on_1" href="/contact">&nbsp;</a>
-    <a class="on_2 ph" href=""><em>电话：{{ session('setting')['fix_phone']  }}<br>手机：{{ session('setting')['phone']  }}</em></a>
-    <a class="on_3 add" href=""><em>{{ session('setting')['bases']  }}</em></a>
-    <a class="on_4 ewm" href=""><em><img src="{{ session('setting')['wx_map']  }}"></em></a>
-    <a class="on_5" href="" onclick="javascript:scroll(0,0)">&nbsp;</a>
+<!-- float_fix -->
+<div class="float_fix">
+    <div class="top">
+        <a href="" class="a1">小学辅导</a>
+        <a href="" class="a2">初中辅导</a>
+        <a href="" class="a3">高中辅导</a>
+        <a href="" class="a4">校区地址</a>
+        <a href="" class="a5">在线报名</a>
+        <div class="call">
+            <p>咨询热线</p>
+            <p>{{ session('setting')['fix_phone']  }}</p>
+        </div>
+    </div>
+    <a class="bot" href="" onclick="javascript:scroll(0,0)">&nbsp;</a>
 </div>
 <!-- time -->
 <script src="/js/wow.min.js"></script>

@@ -22,6 +22,7 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('/','FrontController@index');
 
         Route::get('about','FrontController@about');
+        Route::get('about/category/{id}','FrontController@about');
         Route::get('about/culture','FrontController@culture');
         Route::get('about/brand','FrontController@brand');
         Route::get('about/video','FrontController@video');
@@ -46,6 +47,14 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('item','FrontController@item');
         Route::get('item/category/{id}','FrontController@item');
         Route::get('item/{id}','FrontController@item_detail');
+
+        Route::get('class','FrontController@classs');
+        Route::get('class/category/{id}','FrontController@classs');
+        Route::get('class/{id}','FrontController@class_detail');
+
+        Route::get('environment','FrontController@environment');
+        Route::get('environment/category/{id}','FrontController@environment');
+        Route::get('environment/{id}','FrontController@environment_detail');
 
         Route::get('join','FrontController@join_detail');
         Route::get('join/category/{id}','FrontController@join_detail');

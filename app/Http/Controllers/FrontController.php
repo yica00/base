@@ -140,9 +140,9 @@ class FrontController extends Controller
     }
 
 
-    public function about(){
-        $article = Article::find(9);
-        return view('front.about',compact('article'));
+    public function about( $id=8 ){
+        $article = Article::find($id);
+        return view('front.about',compact('article','id'));
     }
     public function culture(){
         $article = Article::find(10);
@@ -181,6 +181,17 @@ class FrontController extends Controller
         $article = Article::find($id);
         $article->comtent = get_article_imgs($article->comtent,40);
         return view('front.store_in',compact('article'));
+    }
+
+    public function classs( $id=12  ){
+        $articles = Article::where('pid',$id)->orderBy('id','desc')->paginate(6);
+//        $pages = getPage($articles,3);
+        return view('front.class',compact('articles','pages','id'));
+    }
+    public function class_detail($id){
+        $article = Article::find($id);
+//        $article->comtent = get_article_imgs($article->comtent,40);
+        return view('front.class_in',compact('article'));
     }
 
     public function active_list(){
@@ -223,14 +234,23 @@ class FrontController extends Controller
         return view('front.history',compact('nav','sty','articles'));
     }
     public function team(){
-        $teams = Teams::select('id','name','photo','title')->orderBy('id','asc')->paginate(8);
-        $pages = getPage($teams,8);
-        return view('front.team',compact('teams','pages'));
+        $articles = Article::where('pid',4)->orderBy('serial_number','desc')->paginate(8);
+        return view('front.team',compact('articles','pages'));
     }
     public function team_detail($id){
-        $team = Teams::find($id);
+        $team = Article::find($id);
 //        $articles = Article::whereIn('id',$ids)->orderBy('serial_number','desc')->get();
         return view('front.team_in',compact('team','articles'));
+    }
+
+    public function environment( $id=15 ){
+        $articles = Article::where('pid',$id)->orderBy('serial_number','desc')->paginate(8);
+        return view('front.environ',compact('articles','pages','id'));
+    }
+    public function environment_detail($id){
+        $team = Article::find($id);
+//        $articles = Article::whereIn('id',$ids)->orderBy('serial_number','desc')->get();
+        return view('front.environ_in',compact('team','articles'));
     }
 
     public function honor(){
