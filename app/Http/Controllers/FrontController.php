@@ -88,7 +88,7 @@ class FrontController extends Controller
         return $articles;
     }
     public function getEnvssssssssss(){
-        $articles = Article::where('pid',48)->orderBy('serial_number','desc')->orderBy('id','asc')->take(6)->get();
+        $articles = Article::where('pid',54)->orderBy('serial_number','desc')->orderBy('id','asc')->take(3)->get();
         return $articles;
     }
     public function getHonor(){
@@ -274,6 +274,18 @@ class FrontController extends Controller
         $team = Article::find($id);
 //        $articles = Article::whereIn('id',$ids)->orderBy('serial_number','desc')->get();
         return view('front.environ_in',compact('team','articles'));
+    }
+
+    public function student( ){
+        $articles = Article::where('pid',54)
+            ->orderBy('serial_number','desc')->paginate(6);
+        $id = 0;
+        return view('front.student',compact('articles','pages','id'));
+    }
+    public function student_detail($id){
+        $team = Article::find($id);
+//        $articles = Article::whereIn('id',$ids)->orderBy('serial_number','desc')->get();
+        return view('front.student_in',compact('team','articles'));
     }
 
     public function honor(){

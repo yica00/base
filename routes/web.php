@@ -29,6 +29,8 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('about/video/{id}','FrontController@video_detail');
         Route::get('about/honor','FrontController@honor');
         Route::get('about/env','FrontController@env');
+        Route::get('about/student','FrontController@student');
+        Route::get('about/student/{id}','FrontController@student_detail');
 
         Route::get('news','FrontController@news');
         Route::get('news/category/{id}','FrontController@news');
