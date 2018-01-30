@@ -73,7 +73,7 @@
           {{--<p>课下看不懂??、作业难完成。</p>--}}
         </div>
         <div class="pic">
-          <img src="{{$arti->thumbnail}}">
+          <img src="{{$envssss->thumbnail}}">
         </div>
       </li>
       @endforeach
