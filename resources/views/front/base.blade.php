@@ -29,7 +29,7 @@
 <!-- header -->
 <div class="header">
     <div class="w1160 clearfix">
-        <div class="call fr">0817-7896589</div>
+        <div class="call fr">{{ session('setting')['fix_phone']  }}</div>
         <a href="/" class="logo fl">&nbsp;</a>
         <div class="nav_box fr">
             <ul id="nav" class="nav clearfix">

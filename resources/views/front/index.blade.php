@@ -122,9 +122,9 @@
     </div>
     <span class="bk30">&nbsp;</span>
     <div class="btns clearfix">
-      <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">小学1对1咨询</a>
-      <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">初中1对1咨询</a>
-      <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">高中1对1咨询</a>
+      <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">小学课程</a>
+      <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">初中课程</a>
+      <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">高中课程</a>
     </div>
     <span class="bk60">&nbsp;</span>
     <div class="picScroll-left">
