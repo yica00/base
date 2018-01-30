@@ -1,5 +1,6 @@
 @extends('front.base')
 @section('content')
+  <link rel="stylesheet" href="/css/paginate.css">
 <!-- banner -->
   
 <div class="bread">
