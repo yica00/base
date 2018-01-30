@@ -57,7 +57,7 @@
         var infoWindow = new AMap.InfoWindow({
             isCustom: true,  //使用自定义窗体
             content: createInfoWindow(title, content.join("<br/>")),
-            offset: new AMap.Pixel(160, -15)
+            offset: new AMap.Pixel(10, -15)
         });
 
         //构建自定义信息窗体
