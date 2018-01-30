@@ -155,83 +155,83 @@
 <a  style="background:url(images/ad_2.jpg) center no-repeat;" class="ho_add_1">&nbsp;</a>
 <!-- 老师 -->
 
-<div class="w1160 clearfix">
-  <div class="huis_xuey_on">
-    <span class="bk60">&nbsp;</span>
-    <div class="ho_tit_all">
-      <a href="/about/student">
-        <h2>梦想，比你想象的更容易实现！</h2>
-        <p>全面提升辅导效果 平均单科提分37.5</p>
-      </a>
-    </div>
-    <span class="bk30">&nbsp;</span>
-    <ul class="list clearfix">
-      @foreach( $envssssssssss as $k=>$envsssssssss )
-      <li>
-        <a href="/about/student/{{$envsssssssss->id}}">
-          <div class="pic">
-            <img src="{{$envsssssssss->thumbnail}}">
-          </div>
-          <div class="txt">
-            <h2>{{$envsssssssss->title}}</h2>
-            <h3><span>{{$envsssssssss->link}}</span></h3>
-            <p>{{$envsssssssss->introduce}}</p>
-          </div>
-        </a>
-      </li>
-      @endforeach
-    </ul>
-    <div class="btns"><a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">点击咨询提分经验</a></div>
-  </div>
-</div>
-
-
 {{--<div class="w1160 clearfix">--}}
-  {{--<div class="huis_tea_on">--}}
+  {{--<div class="huis_xuey_on">--}}
     {{--<span class="bk60">&nbsp;</span>--}}
     {{--<div class="ho_tit_all">--}}
-      {{--<a href="/team">--}}
-        {{--<h2>能让孩子提分的才是好老师</h2>--}}
-        {{--<p>能提分的才是好老师，慧尚学员平均单科提高15.8分</p>--}}
+      {{--<a href="/about/student">--}}
+        {{--<h2>梦想，比你想象的更容易实现！</h2>--}}
+        {{--<p>全面提升辅导效果 平均单科提分37.5</p>--}}
       {{--</a>--}}
     {{--</div>--}}
     {{--<span class="bk30">&nbsp;</span>--}}
-    {{--<ul class="top clearfix">--}}
+    {{--<ul class="list clearfix">--}}
       {{--@foreach( $envssssssssss as $k=>$envsssssssss )--}}
-      {{--<li class="clearfix">--}}
-          {{--<div class="icon fl"><img src="/images/ls_{{$k+1}}.png"></div>--}}
-          {{--<div class="txt fl">{{$envsssssssss->title}}<br/>{{$envsssssssss->introduce}}</div>--}}
+      {{--<li>--}}
+        {{--<a href="/about/student/{{$envsssssssss->id}}">--}}
+          {{--<div class="pic">--}}
+            {{--<img src="{{$envsssssssss->thumbnail}}">--}}
+          {{--</div>--}}
+          {{--<div class="txt">--}}
+            {{--<h2>{{$envsssssssss->title}}</h2>--}}
+            {{--<h3><span>{{$envsssssssss->link}}</span></h3>--}}
+            {{--<p>{{$envsssssssss->introduce}}</p>--}}
+          {{--</div>--}}
+        {{--</a>--}}
       {{--</li>--}}
       {{--@endforeach--}}
-
     {{--</ul>--}}
-    {{--<span class="bk60">&nbsp;</span>--}}
-    {{--<div class="picScroll-left-js"> --}}
-      {{--<div class="bd">--}}
-        {{--<ul class="picList">--}}
-          {{--@foreach( $teams as $team )--}}
-          {{--<li>--}}
-            {{--<a href="/team/{{$team->id}}">--}}
-              {{--<div class="txt txt_yc">{{$team->introduce}}</div>--}}
-              {{--<div class="pic"><img src="{{$team->thumbnail}}"></div>--}}
-              {{--<h2>{{$team->title}}</h2>--}}
-              {{--<p>{{$team->link}}</p>--}}
-            {{--</a>--}}
-          {{--</li>--}}
-        {{--@endforeach--}}
-
-        {{--</ul>--}}
-      {{--</div>--}}
-      {{--<div class="hd">--}}
-        {{--<ul></ul>--}}
-      {{--</div>--}}
-    {{--</div>--}}
-
-    {{--<script type="text/javascript">--}}
-    {{--jQuery(".picScroll-left-js").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:1,trigger:"click"});--}}
-    {{--</script>--}}
+    {{--<div class="btns"><a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">点击咨询提分经验</a></div>--}}
   {{--</div>--}}
 {{--</div>--}}
+
+
+<div class="w1160 clearfix">
+  <div class="huis_tea_on">
+    <span class="bk60">&nbsp;</span>
+    <div class="ho_tit_all">
+      <a href="/team">
+        <h2>能让孩子提分的才是好老师</h2>
+        <p>能提分的才是好老师，慧尚学员平均单科提高15.8分</p>
+      </a>
+    </div>
+    <span class="bk30">&nbsp;</span>
+    <ul class="top clearfix">
+      @foreach( $envssssssssss as $k=>$envsssssssss )
+      <li class="clearfix">
+          <div class="icon fl"><img src="/images/ls_{{$k+1}}.png"></div>
+          <div class="txt fl">{{$envsssssssss->title}}<br/>{{$envsssssssss->introduce}}</div>
+      </li>
+      @endforeach
+
+    </ul>
+    <span class="bk60">&nbsp;</span>
+    <div class="picScroll-left-js">
+      <div class="bd">
+        <ul class="picList">
+          @foreach( $teams as $team )
+          <li>
+            <a href="/team/{{$team->id}}">
+              <div class="txt txt_yc">{{$team->introduce}}</div>
+              <div class="pic"><img src="{{$team->thumbnail}}"></div>
+              <h2>{{$team->title}}</h2>
+              <p>{{$team->link}}</p>
+            </a>
+          </li>
+        @endforeach
+
+        </ul>
+      </div>
+      <div class="hd">
+        <ul></ul>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    jQuery(".picScroll-left-js").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:1,trigger:"click"});
+    </script>
+  </div>
+</div>
 <!--  -->
 <span class="bk60">&nbsp;</span>
 <div class="huis_hj_on">
