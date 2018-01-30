@@ -196,15 +196,15 @@
       </a>
     </div>
     <span class="bk30">&nbsp;</span>
-    <ul class="top clearfix">
-      @foreach( $envssssssssss as $k=>$envsssssssss )
-      <li class="clearfix">
-          <div class="icon fl"><img src="/images/ls_{{$k+1}}.png"></div>
-          <div class="txt fl">{{$envsssssssss->title}}<br/>{{$envsssssssss->introduce}}</div>
-      </li>
-      @endforeach
+    {{--<ul class="top clearfix">--}}
+      {{--@foreach( $envssssssssss as $k=>$envsssssssss )--}}
+      {{--<li class="clearfix">--}}
+          {{--<div class="icon fl"><img src="/images/ls_{{$k+1}}.png"></div>--}}
+          {{--<div class="txt fl">{{$envsssssssss->title}}<br/>{{$envsssssssss->introduce}}</div>--}}
+      {{--</li>--}}
+      {{--@endforeach--}}
 
-    </ul>
+    {{--</ul>--}}
     <span class="bk60">&nbsp;</span>
     <div class="picScroll-left-js">
       <div class="bd">
