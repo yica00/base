@@ -52,12 +52,12 @@
         //实例化信息窗体
         var title = '慧尚教育',
             content = [];
-        content.push("<div style='border:solid 1px;padding:5px' >地址：{{session('setting')['bases']}}");
+        content.push("<div style='border:solid 1px;padding:5px;width:200px' >地址：{{session('setting')['bases']}}");
         content.push("电话：{{ session('setting')['fix_phone'] }} </div> ");
         var infoWindow = new AMap.InfoWindow({
             isCustom: true,  //使用自定义窗体
             content: createInfoWindow(title, content.join("<br/>")),
-            offset: new AMap.Pixel(10, -15)
+            offset: new AMap.Pixel(110, -15)
         });
 
         //构建自定义信息窗体
