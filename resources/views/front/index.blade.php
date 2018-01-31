@@ -42,14 +42,14 @@
       <div class="icon"><img src="{{$envss->thumbnail}}"></div>
       <h2 class="txt_yc bt">{{$envss->title}}</h2>
       <p class="dis">{{$envss->introduce}}</p>
-      <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes" class="btn btn_1">如何了解我的定位 &gt;&gt;</a>
+      <a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes" class="btn btn_1">如何了解我的定位 &gt;&gt;</a>
     </li>
     @endforeach
   </ul>
 </div>
 <!-- 广告位 -->
 <span class="bk60">&nbsp;</span>
-<a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes" style="background:url(images/ad_1.jpg) center no-repeat;" class="ho_add_1">&nbsp;</a>
+<a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes" style="background:url(images/ad_1.jpg) center no-repeat;" class="ho_add_1">&nbsp;</a>
 <!-- slove -->
 <div class="w1160 clearfix">
   <span class="bk60">&nbsp;</span>
@@ -103,7 +103,7 @@
       <li class="li_{{$k+1}}">
         <div class="pic"><img src="{{$envsssss->thumbnail}}"></div>
         <div class="bt">{{$envsssss->title}}</div>
-        <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">点击参与</a>
+        <a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">点击参与</a>
       </li>
       @endforeach
     </ul>
@@ -122,9 +122,9 @@
     </div>
     <span class="bk30">&nbsp;</span>
     <div class="btns clearfix">
-      <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">小学课程</a>
-      <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">初中课程</a>
-      <a href="tencent://message/?uin={{ session('setting')['fix_phone'] }}&Menu=yes">高中课程</a>
+      <a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">小学课程</a>
+      <a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">初中课程</a>
+      <a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">高中课程</a>
     </div>
     <span class="bk60">&nbsp;</span>
     <div class="picScroll-left">
