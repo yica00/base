@@ -111,47 +111,85 @@
   </div>
 </div>
 <!-- kebiao -->
+{{--<div class="huis_kb_on">--}}
+  {{--<div class="w1160 clearfix">--}}
+    {{--<span class="bk60">&nbsp;</span>--}}
+    {{--<div class="ho_tit_all ho_tit_2">--}}
+      {{--<a >--}}
+        {{--<h2>全年级全科目辅导基础难点全掌握</h2>--}}
+        {{--<p>全阶段集中学习，最后一周模考冲刺效果最佳</p>--}}
+      {{--</a>--}}
+    {{--</div>--}}
+    {{--<span class="bk30">&nbsp;</span>--}}
+    {{--<div class="btns clearfix">--}}
+      {{--<a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">小学课程</a>--}}
+      {{--<a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">初中课程</a>--}}
+      {{--<a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">高中课程</a>--}}
+    {{--</div>--}}
+    {{--<span class="bk60">&nbsp;</span>--}}
+    {{--<div class="picScroll-left">--}}
+      {{--<div class="hd">--}}
+        {{--<a class="next"></a>--}}
+        {{--<a class="prev"></a>--}}
+      {{--</div>--}}
+      {{--<div class="bd">--}}
+        {{--<ul class="picList">--}}
+          {{--@foreach( $envssssssss as $envsssssss )--}}
+          {{--<li>--}}
+            {{--<div class="bt">{{$envsssssss->title}}</div>--}}
+            {{--<div class="txt">--}}
+              {{--{!! $envsssssss->comtent !!}--}}
+            {{--</div>--}}
+          {{--</li>--}}
+          {{--@endforeach--}}
+        {{--</ul>--}}
+      {{--</div>--}}
+    {{--</div>--}}
+    {{--<script type="text/javascript">--}}
+    {{--jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:4,trigger:"click"});--}}
+    {{--</script>--}}
+    {{--<span class="bk60">&nbsp;</span>--}}
+  {{--</div>--}}
+{{--</div>--}}
+<!-- 广告位2 -->
+
 <div class="huis_kb_on">
   <div class="w1160 clearfix">
     <span class="bk60">&nbsp;</span>
     <div class="ho_tit_all ho_tit_2">
-      <a >
+      <a href="">
         <h2>全年级全科目辅导基础难点全掌握</h2>
         <p>全阶段集中学习，最后一周模考冲刺效果最佳</p>
       </a>
     </div>
-    <span class="bk30">&nbsp;</span>
-    <div class="btns clearfix">
-      <a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">小学课程</a>
-      <a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">初中课程</a>
-      <a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">高中课程</a>
-    </div>
     <span class="bk60">&nbsp;</span>
-    <div class="picScroll-left">
+    <div class="slideTxtBox_lyfl">
       <div class="hd">
-        <a class="next"></a>
-        <a class="prev"></a>
+        <span class="arrow"><a class="next"></a><a class="prev"></a></span>
+        <ul> @foreach( $envssssssss as $ens ) <li>{{$ens->title}}</li> @endforeach </ul>
       </div>
       <div class="bd">
-        <ul class="picList">
-          @foreach( $envssssssss as $envsssssss )
+        @foreach( $envssssssss as $ens )
+        <ul>
+          @foreach( $ens->articles as $en )
           <li>
-            <div class="bt">{{$envsssssss->title}}</div>
+            <div class="bt">{{$en->title}}</div>
             <div class="txt">
-              {!! $envsssssss->comtent !!}
+            {!! $en->comtent !!}
             </div>
           </li>
-          @endforeach
+            @endforeach
         </ul>
+        @endforeach
       </div>
     </div>
-    <script type="text/javascript">
-    jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:4,trigger:"click"});
-    </script>
+    <script type="text/javascript">jQuery(".slideTxtBox_lyfl").slide();</script>
     <span class="bk60">&nbsp;</span>
   </div>
 </div>
-<!-- 广告位2 -->
+
+
+
 <a  style="background:url(images/ad_2.jpg) center no-repeat;" class="ho_add_1">&nbsp;</a>
 <!-- 老师 -->
 
