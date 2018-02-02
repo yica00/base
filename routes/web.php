@@ -53,6 +53,7 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('class','FrontController@classs');
         Route::get('class/category/{id}','FrontController@classs');
         Route::get('class/{id}','FrontController@class_detail');
+        Route::get('/class/jpkc/jzkc','FrontController@jzkc');
 
         Route::get('environment','FrontController@environment');
         Route::get('environment/category/{id}','FrontController@environment');

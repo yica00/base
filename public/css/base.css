@@ -411,8 +411,15 @@ body{background-color:white;overflow-x:hidden;font-size:14px;
 .slideTxtBox_lyfl .arrow .next,.slideTxtBox_lyfl .arrow .prev{ display:block;  width:30px; height:80px;overflow:hidden; position:absolute;}
 .slideTxtBox_lyfl .arrow .prev{ background: url(/images/cp_pre.png) 0 0 no-repeat;}
 .slideTxtBox_lyfl .arrow .next{ background: url(/images/cp_next.png) -30px 0 no-repeat;right: 0;}
-
-
+/**/
+.slideTxtBox_kc{ width:100%; }
+.slideTxtBox_kc .hd{ height:60px; line-height:60px; background:#fc7a00;width: 100%;}
+.slideTxtBox_kc .hd ul{ float:left; height:60px; width: 100%;  }
+.slideTxtBox_kc .hd ul li{ float:left;  cursor:pointer;width: 25%;font-size: 18px;
+  text-align: center;line-height: 60px;color: #fff;display: inline-block;  }
+.slideTxtBox_kc .hd ul li.on{background: #fc5900; }
+.slideTxtBox_kc .bd { padding:20px;  zoom:1;  }
+.slideTxtBox_kc .bd img{max-width: 100%;}
 
 
 

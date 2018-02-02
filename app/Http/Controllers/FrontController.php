@@ -214,7 +214,7 @@ class FrontController extends Controller
     }
 
     public function classs( $id=12  ){
-        $articles = Article::where('pid',$id)->orderBy('id','desc')->paginate(6);
+        $articles = Article::where('pid',$id)->orderBy('serial_number','desc')->orderBy('id','desc')->paginate(6);
 //        $pages = getPage($articles,3);
         return view('front.class',compact('articles','pages','id'));
     }
@@ -222,6 +222,10 @@ class FrontController extends Controller
         $article = Article::find($id);
 //        $article->comtent = get_article_imgs($article->comtent,40);
         return view('front.class_in',compact('article'));
+    }
+    public function jzkc(){
+        $articles = Article::where('pid',129)->get();
+        return view('front.jzkc',compact('articles'));
     }
 
     public function active_list(){

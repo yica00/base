@@ -103,7 +103,7 @@
       <li class="li_{{$k+1}}">
         <div class="pic"><img src="{{$envsssss->thumbnail}}"></div>
         <div class="bt">{{$envsssss->title}}</div>
-        <a href="tencent://message/?uin={{ session('setting')['qq'] }}&Menu=yes">点击参与</a>
+        <a href="/class/jpkc/jzkc">参看详情</a>
       </li>
       @endforeach
     </ul>

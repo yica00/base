@@ -17,6 +17,9 @@
           <a href="@if( $art->link ){{$art->link}}@else{{$cate->link}}/category/{{$art->id}}@endif" >{{$art->title}}</a>
         </li>
       @endforeach
+        <li>
+          <a href="/class/jpkc/jzkc" >四大精准课程</a>
+        </li>
     @endif
   @endforeach
 </ul>
