@@ -86,7 +86,10 @@ class FrontController extends Controller
     public function getEnvssssssss(){
         $arts = Article::where('pid',45)->get();
         $ids = getIds($arts);
-        $articles = Article::with('articles')->whereIn('id',$ids)
+        $articles = Article::with(['articles'=>function($query){
+            $query->orderBy('serial_number','desc')
+                ->orderBy('id','asc');
+        }])->whereIn('id',$ids)
             ->orderBy('serial_number','desc')
             ->orderBy('id','asc')->get();
         return $articles;
