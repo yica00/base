@@ -224,7 +224,7 @@ class FrontController extends Controller
         return view('front.class_in',compact('article'));
     }
     public function jzkc(){
-        $articles = Article::where('pid',129)->get();
+        $articles = Article::where('pid',129)->orderBy('serial_number','desc')->orderBy('id','desc')->get();
         return view('front.jzkc',compact('articles'));
     }
 
