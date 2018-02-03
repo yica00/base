@@ -41,12 +41,31 @@
           <p><input type="text" value="" name="name" id="name" class="input" placeholder="请输入您的姓名"></p>
           <p><input type="text" value="" name="phone" id="phone" class="input" placeholder="请输入您的电话"></p>
           <p>
+              <select id="" name="nianji">
+                  <option value="0" selected="selected">请选择你想要报读的年级</option>
+                  <option value="1年级">1年级</option>
+                  <option value="2年级">2年级</option>
+                  <option value="3年级">3年级</option>
+                  <option value="4年级">4年级</option>
+                  <option value="5年级">5年级</option>
+                  <option value="6年级">6年级</option>
+                  <option value="7年级">7年级</option>
+                  <option value="8年级">8年级</option>
+                  <option value="9年级">9年级</option>
+                  <option value="高一">高一</option>
+                  <option value="高二">高二</option>
+                  <option value="高三">高三</option>
+              </select>
+          </p>
+          <p>
               <select id="" name="class">
                   <option value="0" selected="selected">请选择你想要报读的课程</option>
                   <option value="语文">语文</option>
                   <option value="数学">数学</option>
                   <option value="英语">英语</option>
-                  <option value="奥数">奥数</option>
+                  <option value="作业辅导">作业辅导</option>
+                  <option value="物理">物理</option>
+                  <option value="化学">化学</option>
               </select>
           </p>
           <p><textarea name="content" class="textarea" id="" value="" placeholder="如何您还有其他问题，可以在这里给我们留言"></textarea></p>

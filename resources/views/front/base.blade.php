@@ -105,11 +105,11 @@
 <!-- float_fix -->
 <div class="float_fix">
     <div class="top">
+        <a href="/contact/order" class="a5">在线报名</a>
         <a href="/contact/order" class="a1">小学辅导</a>
         <a href="/contact/order" class="a2">初中辅导</a>
         <a href="/contact/order" class="a3">高中辅导</a>
-        <a href="/contact/order" class="a4">校区地址</a>
-        <a href="/contact/order" class="a5">在线报名</a>
+        <a href="/contact/way" class="a4">校区地址</a>
         <div class="call">
             <p>咨询热线</p>
             <p>{{ session('setting')['fix_phone']  }}</p>
