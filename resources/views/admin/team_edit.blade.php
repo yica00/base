@@ -44,28 +44,26 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">职称</label>
+                                <label for="email" class="col-md-4 control-label">年级</label>
                                 <div class="col-md-6">
                                     <input id="email"  class="form-control" name="title"  value="{{  $team->title }}" autofocus>
                                 </div>
                             </div>
 
+
+
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">从业年限</label>
+                                <label for="email" class="col-md-4 control-label">科目</label>
                                 <div class="col-md-6">
-                                    <input id="email"  class="form-control" name="work_age" value="{{  $team->work_age }}"   autofocus>
+                                    <input id="email"  class="form-control" name="honor"  value="{{$team->honor}}" autofocus>
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">荣誉</label>
-                                <div class="col-md-6">
-                                    <textarea class="form-control" rows="3" name="honor" >{{$team->honor}}</textarea>
-                                </div>
-                            </div>
+
+
 
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">擅长项目</label>
+                                <label for="email" class="col-md-4 control-label">教学理念</label>
                                 <div class="col-md-6">
                                     <textarea class="form-control" rows="4" name="good_at" >{{$team->good_at}}</textarea>
                                 </div>

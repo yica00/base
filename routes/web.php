@@ -71,6 +71,8 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('team','FrontController@team');
         Route::get('team/{id}','FrontController@team_detail');
 
+        Route::get('envrionment','FrontController@envrionment');
+
         Route::get('equipment','FrontController@equipment');
         Route::get('equipment/{id}','FrontController@equipment_detail');
 
@@ -86,7 +88,7 @@ Route::group(['middleware'=>'check_setting'],function (){
 
 
         Route::get('contact','FrontController@contact');
-        Route::get('contact/order','FrontController@message');
+        Route::get('order','FrontController@message');
 
         Route::post('/front/message','Admin\MessageController@store');
         Route::any('/search','FrontController@search');

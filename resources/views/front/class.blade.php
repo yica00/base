@@ -1,58 +1,48 @@
 @extends('front.base')
 @section('content')
   <link rel="stylesheet" href="/css/paginate.css">
-<!-- banner -->
-  
+<!-- bread -->
 <div class="bread">
-  <span class="bk30">&nbsp;</span>
-  <h2>Course Center</h2>
-  <p class="p1">课程中心</p>
-  <p class="p2">&nbsp;</p>
+  <h2>课程中心</h2>
+  <ul class="sublist">
+    @foreach( session('header_nav') as $cate )
+      @if( $cate->id == 3 )
+        @foreach( $cate->articles as $art )
+          <li class=" @if( $art->id == $id ) on @endif">
+            <a href="@if( $art->link ){{$art->link}}@else{{$cate->link}}/category/{{$art->id}}@endif" >{{$art->title}}</a>
+          </li>
+        @endforeach
+      @endif
+    @endforeach
+  </ul>
 </div>
-<ul class="sublist">
-  @foreach( session('header_nav') as $cate )
-    @if( $cate->id == 3 )
-      @foreach( $cate->articles as $art )
-        <li class=" @if( $art->id == $id ) on @endif">
-          <a href="@if( $art->link ){{$art->link}}@else{{$cate->link}}/category/{{$art->id}}@endif" >{{$art->title}}</a>
-        </li>
-      @endforeach
-    @endif
-  @endforeach
-</ul>
-<!--  -->
-<div class="txt_demo_1">
+<!-- wap_box -->
+<div class="wap_box">
   <div class="w1160 clearfix">
-    <ul class="class_list clearfix">
+    <!-- star -->
+    <ul class="class_list_o clearfix">
       @foreach( $articles as $article )
       <li>
         <a href="/class/{{$article->id}}">
-          <div class="p1">
-            {{--初升高（初三下学期）--}}
+          <div class="img">
+            <img src="{{$article->thumbnail}}">
           </div>
-          <div class="p2">
-            {{$article->title}}
+          <div class="txt clearfix">
+            <div class="dl fr">
+              <h2>{{$article->title}}</h2>
+              <p>开班时间：{{$article->introduce}}</p>
+            </div>
+            <div class="fenl fl"> </div>
           </div>
-          <div class="p3">
-            {{$article->introduce}}
-          </div>
-          <span class="btns">了解详情</span>
+          <div class="line">&nbsp;</div>
         </a>
       </li>
       @endforeach
     </ul>
-    {{$articles->links()}}
-    {{--<div class="pageJump clearfix">--}}
-      {{--<div class="number">--}}
-          {{--<span class="disabled"><a href="">上一页</a></span>--}}
-          {{--<span class="disabled"><a href="">1</a></span>--}}
-          {{--<span class="disabled"><a href="">2</a></span>--}}
-          {{--<span class="disabled"><a href="">3</a></span>--}}
-          {{--<span class="disabled"><a href="">下一页</a></span>--}}
-      {{--</div>--}}
-    {{--</div>--}}
+  {{$articles->links()}}
+    <!-- end -->
   </div>
 </div>
-<span class="bk60">&nbsp;</span>
-<!--  -->
+
+<!-- footer -->
 @endsection
