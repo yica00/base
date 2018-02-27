@@ -301,7 +301,7 @@ class FrontController extends Controller
 
     public function student( ){
         $articles = Article::where('pid',12)
-            ->orderBy('serial_number','desc')->paginate(6);
+            ->orderBy('serial_number','desc')->paginate(8);
         $id = 0;
         return view('front.student',compact('articles','pages','id'));
     }
