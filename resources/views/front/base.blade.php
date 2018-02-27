@@ -73,7 +73,12 @@
                 <p>座机：{{ session('setting')['fix_phone']  }}</p>
                 <p>电话：{{ session('setting')['phone']  }}</p>
                 <p>Q Q：{{ session('setting')['qq']  }}</p>
-                <p>地址：{{ session('setting')['bases']  }}</p>
+                <p>地址：{{ session('setting')['bases']  }}<br>
+                    ②南充市顺庆区人民花园华美家居城4楼<br>
+                    ③南充市顺庆区城市之星（南充高中对面）2楼<br>
+                    ④南充市高坪区河东街53号
+                    <br>
+                </p>
             </div>
         </div>
     </div>
