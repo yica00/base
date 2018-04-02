@@ -173,4 +173,13 @@ class HomeController extends Controller
     }
 
 
+    public function logout(){
+        Auth::logout();
+        return redirect('/home');
+    }
+
+    public function register(){
+        return null;
+    }
+
 }

@@ -159,11 +159,6 @@ Route::group(['middleware'=>'check_setting'],function (){
 
     });
 
-    Route::get('/admin/logout', function () {
-        Auth::logout();
-        return redirect('/home');
-    });
-
 
     Route::resource('user','Admin\userController');
 
@@ -209,12 +204,11 @@ Route::group(['middleware'=>'check_setting'],function (){
 
 });
 
-Route::any('/register',function (){
-    return null;
-});
 
-Route::get('/vaptcha',function (){
-    return getCaptcha(4);
-});
+Route::get('/admin/logout', 'HomeController@logout');
+Route::any('/register', 'HomeController@register');
+//Route::get('/vaptcha',function (){
+//    return getCaptcha(4);
+//});
 
 
