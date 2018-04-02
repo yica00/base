@@ -59,7 +59,7 @@ class MessageController extends Controller
 //        if (isset($atic['amout'])){
 //            $atic['message'] = '产品数量：'.$atic['amout'].'<br>产品名字：'.$atic['product'].'<br>留言详情：'.$atic['message'];
 //        }
-        $atic['message'] =  '年级：'.$atic['nianji'].'<br>课程：'.$atic['class'].'<br>留言详情：'.$atic['content'];
+//        $atic['message'] =  '年级：'.$atic['nianji'].'<br>课程：'.$atic['class'].'<br>留言详情：'.$atic['content'];
         $rel = Message::create($atic);
         if( $rel->wasRecentlyCreated ){
             return back()->with('errors','留言成功，我们会稍后与你联系');

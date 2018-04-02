@@ -59,7 +59,7 @@
                     <li><a href="/admin" class="active"><i class="lnr lnr-home"></i> <span>后台首页</span></a></li>
                     <li><a href="/admin/article" ><i class="lnr lnr-inbox"></i> <span>内容管理</span></a></li>
                     {{--<li><a href="/admin/order_list" class=""><i class="lnr lnr-cart"></i> <span>订单管理</span></a></li>--}}
-                    <li><a href="/admin/team" class=""><i class="lnr lnr-users"></i> <span>老师管理</span></a></li>
+                    {{--<li><a href="/admin/team" class=""><i class="lnr lnr-users"></i> <span>老师管理</span></a></li>--}}
                     {{--<li><a href="/admin/car" class=""><i class="lnr lnr-car"></i> <span>车型管理</span></a></li>--}}
                     {{--<li><a href="/admin/message" class=""><i class="lnr lnr-bubble"></i> <span>报价管理</span></a></li>--}}
                     <li><a href="/admin/message" class=""><i class="lnr lnr-bubble"></i> <span>留言管理</span></a></li>
@@ -96,7 +96,7 @@
     <div class="clearfix" ></div>
     <footer>
         <div class="container-fluid" >
-            <p class="copyright">&copy; 2017  All Rights <a href="http://www.scnuohang.com/" target="_blank" >诺航科技</a>.  </p>
+            <p class="copyright">&copy; 2017  All Rights <a href="http://www.nctianchen.com/" target="_blank">天辰科技</a>  </p>
         </div>
     </footer>
 </div>

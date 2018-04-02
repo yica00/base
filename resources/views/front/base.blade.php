@@ -65,35 +65,23 @@
 <!-- footer -->
 <div class="footer">
     <div class="w1160 clearfix">
-        <div class="top clearfix">
-            <div class="ewm fl">
-                <img src="{{ session('setting')['wx_map']  }}">
-            </div>
-            <div class="txt fl">
-                <p>座机：{{ session('setting')['fix_phone']  }}</p>
-                <p>电话：{{ session('setting')['phone']  }}</p>
-                <p>Q Q：{{ session('setting')['qq']  }}</p>
-                <p>地址：{{ session('setting')['bases']  }}<br>
-                    　　　②南充市顺庆区人民花园华美家居城4楼<br>
-                    　　　③南充市顺庆区城市之星（南充高中对面）2楼<br>
-                    　　　④南充市高坪区河东街53号
-                    <br>
-                </p>
-            </div>
+        <div class="top">
+            <p class="p1">地址/Add：{{ session('setting')['bases']  }}</p>
+            <p class="p1">电话/Tel：{{ session('setting')['fix_phone']  }}</p>
+            <p class="p1">邮箱/Mail：{{ session('setting')['qq']  }}@.com</p>
+            <p class="p2"><span>&nbsp;</span>400-033-7879</p>
         </div>
     </div>
     <div class="bot">
-        <div class="w1160 clearfix">
-            CopyRight © 2017  名师教育 &nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;{{ session('setting')['icp']  }}&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a href="http://www.scnuohang.com/" target="_blank">诺航科技</a>
-        </div>
+        COPYRIGHT版权所有 ◎ 2018 迪歌电器 &nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;{{ session('setting')['icp']  }}&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a href="http://www.nctianchen.com/" target="_blank">天辰科技</a>
     </div>
 </div>
 <!-- float -->
-<div class="float_onlie">
+<div class="float_online">
     <a class="on_1" href="tencent://message/?uin={{ session('setting')['qq']  }}&amp;Menu=yes">&nbsp;</a>
-    <a class="on_2 ph" href=""><em>电话：{{ session('setting')['fix_phone']  }}<br>手机：{{ session('setting')['phone']  }}</em></a>
-    <a class="on_3 add" href=""><em>{{ session('setting')['bases']  }}</em></a>
-    <a class="on_4 ewm" href=""><em><img src="{{ session('setting')['wx_map']  }}"></em></a>
+    <a class="on_2" href=""><div class="call"><p>电话：{{ session('setting')['fix_phone']  }}</p><p>手机：{{ session('setting')['phone']  }}</p></div></a>
+    <a class="on_3" href=""><div class="add"><p>公司地址：{{ session('setting')['bases']  }}/p></div></a>
+    <a class="on_4" href=""><div class="ewm"><img src="{{ session('setting')['wx_map']  }}"><p>天鹰官方微信公众号</p></div></a>
     <a class="on_5" href="" onclick="javascript:scroll(0,0)">&nbsp;</a>
 </div>
 </body>

@@ -24,6 +24,9 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('about','FrontController@about');
         Route::get('about/category/{id}','FrontController@about');
         Route::get('about/culture','FrontController@culture');
+        Route::get('about/maind','FrontController@maind');
+        Route::get('about/history','FrontController@history');
+        Route::get('about/team','FrontController@team');
         Route::get('about/brand','FrontController@brand');
         Route::get('about/video','FrontController@video');
         Route::get('about/video/{id}','FrontController@video_detail');
@@ -42,6 +45,9 @@ Route::group(['middleware'=>'check_setting'],function (){
 
         Route::get('store','FrontController@store_list');
         Route::get('store/{id}','FrontController@store_dedail');
+
+        Route::get('business','FrontController@business');
+        Route::get('business/category/{id}','FrontController@business');
 
         Route::get('active','FrontController@active_list');
         Route::get('active/{id}','FrontController@active_dedail');
@@ -67,9 +73,9 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('case','FrontController@our_case');
         Route::get('case/category/{id}','FrontController@our_case');
         Route::get('case/{id}','FrontController@case_detail');
-
-        Route::get('team','FrontController@team');
-        Route::get('team/{id}','FrontController@team_detail');
+//
+//        Route::get('team','FrontController@team');
+//        Route::get('team/{id}','FrontController@team_detail');
 
         Route::get('envrionment','FrontController@envrionment');
 
@@ -79,6 +85,10 @@ Route::group(['middleware'=>'check_setting'],function (){
         Route::get('product','FrontController@product');
         Route::get('product/category/{id}','FrontController@product');
         Route::get('product/{id}','FrontController@product_detail');
+
+        Route::get('cases','FrontController@our_case');
+        Route::get('cases/category/{id}','FrontController@our_case');
+        Route::get('case/{id}','FrontController@case_detail');
 
         Route::get('service','FrontController@service');
         Route::get('service/category/{id}','FrontController@service');

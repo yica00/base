@@ -2,7 +2,11 @@
 @section('content')
 <!-- banner -->
 <div id="slideBox" class="slideBox">
-  <div class="hd">&nbsp;</div>
+  <div class="hd"><ul>
+      @foreach( $sliders as $slider )
+      <li>&nbsp;</li>
+      @endforeach
+    </ul></div>
   <div class="bd">
     <ul>
       @foreach( $sliders as $slider )
@@ -14,151 +18,267 @@
   <a class="next" href="javascript:void(0)"></a>
 </div>
 <script type="text/javascript">jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:true});</script>
-<!-- class_out -->
-<div class="class_out">
-  <div class="w1160 clearfix">
-    <span class="bk60">&nbsp;</span>
-    <div class="ho_tit-all">
-      <a href="/class">多个学习课程，轻松得高分</a>
+<!-- time -->
+<script src="js/wow.min.js"></script>
+<script src="js/swiper-3.3.1.jquery.min.js"></script>
+<script src="js/swiper.animate1.0.2.min.js"></script>
+<script src="js/global.js"></script>
+<!-- about_out -->
+<div class="w1160 clearfix">
+  <div class="about_out">
+    <div class="ho_tit_all clearfix">
+      <a href="/about">
+        <span class="p1">走进迪歌</span>
+        <span class="p2">about us</span>
+      </a>
     </div>
-    <span class="bk60">&nbsp;</span>
-    <ul class="class_list_o clearfix">
-      @foreach( $classs as $class )
+    <div class="box">
+      <div class="pic">
+        <img src="{{$about->thumbnail}}">
+      </div>
+      <div class="txt">
+        <div class="dis">{{$about->introduce}}</div>
+        <div class="btns"><a href="/about">see more</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- product_out -->
+<div class="product_out">
+  <div class="w1160 clearfix">
+    <div class="ho_tit_all clearfix">
+      <a href="/product">
+        <span class="p1">产品中心</span>
+        <span class="p2">product center</span>
+      </a>
+    </div>
+    <div class="slideGroup">
+      <div class="parHd">
+        <ul>
+          @foreach( $products as $product )
+          <li>
+            <h2>{{$product->title}}</h2>
+            <p>{{$product->introduce}}</p>
+          </li>
+          @endforeach
+      </ul>
+      </div>
+      <div class="parBd">
+        @foreach( $products as $product )
+          <div class="slideBox">
+            <a class="sPrev" href="javascript:void(0)"></a>
+            <ul>
+              @foreach( $product->articles as $arti )
+              <li>
+                <a href="/product/{{$arti->id}}">
+                  <div class="pic"><img src="{{$arti->thumbnail}}" /></div>
+                  <div class="txt">{{$arti->title}}</div>
+                </a>
+              </li>
+                @endforeach
+            </ul>
+            <a class="sNext" href="javascript:void(0)"></a>
+          </div><!-- slideBox End -->
+        @endforeach
+      </div><!-- parBd End -->
+    </div>
+    <script type="text/javascript">
+      /* 内层图片滚动切换 */
+      jQuery(".slideGroup .slideBox").slide({ mainCell:"ul",vis:3,prevCell:".sPrev",autoPage:true,nextCell:".sNext",effect:"left"});
+      /* 外层tab切换 */
+      jQuery(".slideGroup").slide({titCell:".parHd li",mainCell:".parBd"});
+    </script>
+  </div>
+</div>
+<!-- case_out -->
+<div class="w1160 clrearfix">
+  <div class="case_out">
+    <div class="ho_tit_all clearfix">
+      <a href="case">
+        <span class="p1">工程案例</span>
+        <span class="p2">Engineering case</span>
+      </a>
+    </div>
+    <ul class="list clearfix">
+      @foreach( $cases as $case )
       <li>
-        <a href="/class/{{$class->id}}">
-          <div class="img">
-            <img src="{{$class->thumbnail}}">
+        <a href="/case/{{$case->id}}">
+          <div class="pic">
+            <img src="{{$case->thumbnail}}" alt="" />
           </div>
-          <div class="txt clearfix">
-            <div class="dl fr">
-              <h2>{{$class->title}}</h2>
-              <p>开班时间：{{$class->introduce}}</p>
-            </div>
-            <div class="fenl fl">　</div>
-          </div>
+          <div class="txt">{{$case->title}}</div>
           <div class="line">&nbsp;</div>
         </a>
       </li>
       @endforeach
     </ul>
-    <p class="btns"><a href="/class">查看更多课程</a></p>
-  </div>
-  <span class="bk60">&nbsp;</span>
-</div>
-<!-- teacher_out -->
-<div class="teacher_out">
-  <div class="w1160 clearfix">
-    <span class="bk60">&nbsp;</span>
-    <div class="ho_tit-all">
-      <a href="/team">签约优秀教师团队,学员成绩提高有保障</a>
-    </div>
-    <span class="bk60">&nbsp;</span>
-    <div class="picScroll-left" id="picScroll-left-1">
-      <div class="hd">
-        <a class="next"></a>
-        <a class="prev"></a>
-      </div>
-      <div class="bd">
-        <ul class="picList teacher_list_o">
-          @foreach( $teams as $team )
-          <li>
-            <a href="/team/{{$team->id}}">
-              <span class="pic"><img src="{{$team->photo}}" alt="" /></span>
-              <div class="txt">
-                <h2>{{$team->name}}</h2>
-                <p>{{$team->title}}</p>
-                <p>{{$team->honor}}</p>
-              </div>
-            </a>
-          </li>
-          @endforeach
-        </ul>
-      </div>
-    </div>
-    <script type="text/javascript">
-    jQuery("#picScroll-left-1").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:4,trigger:"click"});
-    </script>
-    <span class="bk60">&nbsp;</span>
   </div>
 </div>
-<!-- huis_xuey_on -->
-<div class="huis_xuey_on">
-  <div class="w1160 clearfix">
-    <span class="bk60">&nbsp;</span>
-    <div class="ho_tit-all">
-      <a href="/about/student">优秀的名师学员，传授提分经验</a>
+<!-- service_Out -->
+<div class="service_out">
+  <div class="w1160 clrearfix">
+    <div class="tit_all">
+      <div class="p1"><span>迪歌--燃气采暖综合解决方案专家</span></div>
+      <div class="p2">始终专注于太阳能、空气能设备的研发、设计、制造<br/>专注于供暖系统技术研发及运用</div>
     </div>
-    <span class="bk60">&nbsp;</span>
-    <div class="picScroll-left" id="picScroll-left-2">
-      <div class="hd">
-        <a class="next"></a>
-        <a class="prev"></a>
+    <div class="box clearfix">
+      <div class="w370 fr">
+        <dl class="dl_3">
+          <dt>专注热能解决方案</dt>
+          <dd>专注于热能设备的研发、设计、制造，专注于供暖技术研发及运用</dd>
+        </dl>
+        <dl class="dl_4">
+          <dt>让温度成为温暖</dt>
+          <dd>厚德沉淀，荣耀进取，让温度成为温暖！</dd>
+        </dl>
       </div>
-      <div class="bd">
-        <ul class="picList list">
-          @foreach( $students as $student )
-          <li>
-              <a href="/about/student/{{$student->id}}">
-                <div class="pic">
-                  <img src="{{$student->thumbnail}}">
-                </div>
-                <div class="txt">
-                  <h2>{{$student->title}}</h2>
-                  <h3><span>{{$student->link}}</span></h3>
-                  <p>{{$student->introduce}}</p>
-                </div>
-              </a>
-            </li>
-            @endforeach
-        </ul>
+      <div class="w370 fl">
+        <dl class="dl_1">
+          <dt>建立标准、坚持标准</dt>
+          <dd>让标准成为习惯，让习惯符合标准</dd>
+        </dl>
+        <dl class="dl_2">
+          <dt>做极致安全的热能</dt>
+          <dd>体积更小、更轻便、更加高效节能环保，热效率高达100%</dd>
+        </dl>
       </div>
     </div>
-    <script type="text/javascript">
-    jQuery("#picScroll-left-2").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:4,trigger:"click"});
-    </script>
-    <span class="bk60">&nbsp;</span>
   </div>
 </div>
-<!-- base_out -->
-<div class="base_out">
+<!-- area_out -->
+<div class="w1160 clrearfix">
+  <div class="area_out">
+    <div class="ho_tit_all clearfix">
+      <a href="/about/env">
+        <span class="p1">厂区环境</span>
+        <span class="p2">Factory environment</span>
+      </a>
+    </div>
+    <div class="clearfix">
+      <div class="box_r fr">
+        <a href="/about/env" class="m1"><img src="{{ isset( $envs[0] )? $envs[0]->thumbnail:"" }}"></a>
+        <span class="bk20">&nbsp;</span>
+        <div class="clearfix">
+          <a href="/about/env" class="m2 fr"><img src="{{ isset( $envs[1] )? $envs[1]->thumbnail:"" }}"></a>
+          <a href="/about/env" class="m2 fl"><img src="{{ isset( $envs[2] )? $envs[2]->thumbnail:"" }}"></a>
+        </div>
+      </div>
+      <div class="box_l fl">
+        <div id="slideBox-hj" class="slideBox-hj">
+          <div class="hd"><ul>
+              @foreach( $envs as $env )<li>&nbsp;</li>@endforeach
+            </ul></div>
+          <div class="bd">
+            <ul>
+              @foreach( $envs as $env )
+              <li><a href="/about/env"><img src="{{$env->thumbnail}}"></a></li>
+              @endforeach
+            </ul>
+          </div>
+          <a class="prev" href="javascript:void(0)"></a>
+          <a class="next" href="javascript:void(0)"></a>
+        </div>
+        <script type="text/javascript">jQuery(".slideBox-hj").slide({mainCell:".bd ul",autoPlay:true});</script> 
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- news_out -->
+<div class="news_out">
   <div class="w1160 clearfix">
-    <span class="bk60">&nbsp;</span>
-    <div class="ho_tit-all">
-      <a href="base">舒适教学环境,丰富学习生活</a>
+    <div class="ho_tit_all clearfix">
+      <a href="/news">
+        <span class="p1">新闻中心</span>
+        <span class="p2">news center</span>
+      </a>
     </div>
-    <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox-1.3.4.css" media="screen">
-    <script type="text/javascript" src="/js/jquery.fancybox-1.3.4.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-         
-        $("a[rel=images_group]").fancybox({
-          'transitionIn':'none',
-          'transitionOut':'none',
-          'titlePosition':'over',
-          'titleFormat':function(title, currentArray, currentIndex, currentOpts) {
-            return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
-          }
-        });
-      });
-    </script>
-    <span class="bk60">&nbsp;</span>
-    <div class="tea_act_three clearfix" id="product_big"> 
-      <div class="img_bot clearfix">
-        <a rel="images_group" href="{{ isset( $envs[4])?$envs[4]->thumbnail:"" }}" class="p1 fl mR10"><img src="{{ isset( $envs[4])?$envs[4]->thumbnail:"" }}"></a>
-        <a rel="images_group" href="{{ isset( $envs[5])?$envs[5]->thumbnail:"" }}" class="p2 fl mR10"><img src="{{ isset( $envs[5])?$envs[5]->thumbnail:"" }}"></a>
-        <a rel="images_group" href="{{ isset( $envs[6])?$envs[6]->thumbnail:"" }}" class="p3 fl"><img src="{{ isset( $envs[6])?$envs[6]->thumbnail:"" }}"></a>
-      </div>
-      <span class="bk10">&nbsp;</span>
-      <div class="img_top clearfix">
-        <a rel="images_group" href="{{ isset( $envs[0])?$envs[0]->thumbnail:"" }}"  class="fl mR10"><img src="{{ isset( $envs[0])?$envs[0]->thumbnail:"" }}"></a>
-        <a rel="images_group" href="{{ isset( $envs[1])?$envs[1]->thumbnail:"" }}"  class="fl mR10"><img src="{{ isset( $envs[1])?$envs[1]->thumbnail:"" }}"></a>
-        <a rel="images_group" href="{{ isset( $envs[2])?$envs[2]->thumbnail:"" }}"  class="fl mR10"><img src="{{ isset( $envs[2])?$envs[2]->thumbnail:"" }}"></a>
-        <a rel="images_group" href="{{ isset( $envs[3])?$envs[3]->thumbnail:"" }}"  class="fl"><img src="{{ isset( $envs[3])?$envs[3]->thumbnail:"" }}"></a>
-      </div>
+    <div class="clearfix">
+      <ul class="box_r fr" style="margin-left: 100px;width: 500px" >
+        @foreach( $newss as $k=>$news )
+          @if( $k > 2 )
+        <li>
+          <a href="/news/{{$news->id}}" class="clearfix">
+            <div class="txt fr" style="width: 400px" >
+              <h2>{{$news->title}}</h2>
+              <p>{{$news->introduce}}</p>
+            </div>
+            <span class="num fl">0{{$k+1}}</span>
+          </a>
+        </li>
+          @endif
+        @endforeach
+      </ul>
+      <ul class="box_r"  >
+        @foreach( $newss as $k=>$news )
+          @if( $k < 3 )
+        <li>
+          <a href="/news/{{$news->id}}" class="clearfix">
+            <div class="txt fr" style="width: 450px;" >
+              <h2>{{$news->title}}</h2>
+              <p>{{$news->introduce}}</p>
+            </div>
+            <span class="num fl" >0{{$k+1}}</span>
+          </a>
+        </li>
+          @endif
+        @endforeach
+      </ul>
+
+      {{--<div class="box_l fl">--}}
+        {{--<div id="slideBox-xw" class="slideBox-xw">--}}
+          {{--<div class="hd"><ul><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li><li>&nbsp;</li></ul></div>--}}
+          {{--<div class="bd">--}}
+            {{--<ul>--}}
+              {{--<li>--}}
+                {{--<a href="news_in.html">--}}
+                  {{--<img src="images/hj5.jpg">--}}
+                  {{--<div class="txt">--}}
+                    {{--<h2>助力煤改气，成为北方清洁供暖的一道风景线！</h2>--}}
+                  {{--</div>--}}
+                {{--</a>--}}
+              {{--</li>--}}
+              {{--<li>--}}
+                {{--<a href="news_in.html">--}}
+                  {{--<img src="images/hj4.jpg">--}}
+                  {{--<div class="txt">--}}
+                    {{--<h2>助力煤改气，成为北方清洁供暖的一道风景线！</h2>--}}
+                  {{--</div>--}}
+                {{--</a>--}}
+              {{--</li>--}}
+              {{--<li>--}}
+                {{--<a href="news_in.html">--}}
+                  {{--<img src="images/hj6.jpg">--}}
+                  {{--<div class="txt">--}}
+                    {{--<h2>助力煤改气，成为北方清洁供暖的一道风景线！</h2>--}}
+                  {{--</div>--}}
+                {{--</a>--}}
+              {{--</li>--}}
+              {{--<li>--}}
+                {{--<a href="news_in.html">--}}
+                  {{--<img src="images/hj7.jpg">--}}
+                  {{--<div class="txt">--}}
+                    {{--<h2>助力煤改气，成为北方清洁供暖的一道风景线！</h2>--}}
+                  {{--</div>--}}
+                {{--</a>--}}
+              {{--</li>--}}
+              {{--<li>--}}
+                {{--<a href="news_in.html">--}}
+                  {{--<img src="images/hj8.jpg">--}}
+                  {{--<div class="txt">--}}
+                    {{--<h2>助力煤改气，成为北方清洁供暖的一道风景线！</h2>--}}
+                  {{--</div>--}}
+                {{--</a>--}}
+              {{--</li>--}}
+            {{--</ul>--}}
+          {{--</div>--}}
+          {{--<a class="prev" href="javascript:void(0)"></a>--}}
+          {{--<a class="next" href="javascript:void(0)"></a>--}}
+        {{--</div>--}}
+        {{--<script type="text/javascript">jQuery(".slideBox-xw").slide({mainCell:".bd ul",autoPlay:true});</script>--}}
+      {{--</div> --}}
     </div>
-    <span class="bk60">&nbsp;</span>
-    
   </div>
 </div>
 <!-- footer -->
-@endsection
+@endsection('content')
