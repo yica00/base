@@ -30,7 +30,7 @@
         <p>扫描上面的二维码，关注我吧</p>
       </div>
       <div class="box_l fl">
-        <h2 class="tit" style="margin-top: 50px" >迪歌电器有限公司</h2>
+        <h2 class="tit" style="margin-top: 50px" >广东敢达热能科技有限公司</h2>
         <div class="dis">
           <p>地址：{{ session('setting')['bases']  }}</p>
           <p>电话：{{ session('setting')['fix_phone']  }}</p>
