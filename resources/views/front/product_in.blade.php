@@ -25,7 +25,7 @@
   <div class="txt_demo_1">
     <div class="cp_box_t clearfix">
       <div class="box_r fr">
-        <h2 class="tit">倾动式熔铝炉</h2>
+        <h2 class="tit">{{$article->title}}</h2>
         <dl class="dis">
           <dt>{{ $sons[0]->title }}</dt>
           <dd style="height: 290px;">
