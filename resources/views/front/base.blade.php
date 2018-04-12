@@ -73,7 +73,7 @@
         </div>
     </div>
     <div class="bot">
-        COPYRIGHT版权所有 ◎ 2018 迪歌电器 &nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;{{ session('setting')['icp']  }}&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a href="http://www.nctianchen.com/" target="_blank">天辰科技</a>
+        COPYRIGHT版权所有 ◎ 2018 广东敢达热能科技有限公司 &nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;{{ session('setting')['icp']  }}&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a href="http://www.nctianchen.com/" target="_blank">天辰科技</a>
     </div>
 </div>
 <!-- float -->
@@ -81,7 +81,7 @@
     <a class="on_1" href="tencent://message/?uin={{ session('setting')['qq']  }}&amp;Menu=yes">&nbsp;</a>
     <a class="on_2" href=""><div class="call"><p>电话：{{ session('setting')['fix_phone']  }}</p><p>手机：{{ session('setting')['phone']  }}</p></div></a>
     <a class="on_3" href=""><div class="add"><p>公司地址：{{ session('setting')['bases']  }}/p></div></a>
-    <a class="on_4" href=""><div class="ewm"><img src="{{ session('setting')['wx_map']  }}"><p>天鹰官方微信公众号</p></div></a>
+    <a class="on_4" href=""><div class="ewm"><img src="{{ session('setting')['wx_map']  }}"><p>迪哥官方微信公众号</p></div></a>
     <a class="on_5" href="" onclick="javascript:scroll(0,0)">&nbsp;</a>
 </div>
 </body>
