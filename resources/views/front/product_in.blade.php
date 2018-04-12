@@ -28,7 +28,7 @@
         <h2 class="tit">倾动式熔铝炉</h2>
         <dl class="dis">
           <dt>{{ $sons[0]->title }}</dt>
-          <dd>
+          <dd style="height: 290px;">
             {!! $sons[0]->comtent !!}
           </dd>
         </dl>
