@@ -412,7 +412,7 @@ class FrontController extends Controller
     public function our_case(  ){
         $articles = Article::where('pid',5)
             ->orderBy('serial_number','desc')
-            ->orderBy('id','asc')->paginate(6);
+            ->orderBy('id','asc')->paginate(8);
 //        foreach ( $articles as $k=>$article ){
 //            $pattern = "/(?:\/Uploads).*?(?=\")/";
 //            preg_match_all($pattern,$article->articles[0]->comtent,$matches);
