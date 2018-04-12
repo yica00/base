@@ -33,10 +33,10 @@
           </dd>
         </dl>
         <dl class="dis">
-          <dt>{{ $sons[1]->title }}</dt>
-          <dd>
-            {!! $sons[1]->comtent !!}
-          </dd>
+          {{--<dt>{{ $sons[1]->title }}</dt>--}}
+          {{--<dd>--}}
+            {{--{!! $sons[1]->comtent !!}--}}
+          {{--</dd>--}}
         </dl>
         <a href="tencent://message/?uin={{ session('setting')['qq']  }}&Menu=yes" class="btns">在线咨询购买</a>
       </div>
@@ -69,18 +69,18 @@
     </div>
     <div class="slideTxtBox">
       <div class="hd">
-        <ul><li>{{ $sons[2]->title }}</li><li>{{ $sons[3]->title }}</li><li>{{ $sons[4]->title }}</li></ul>
+        <ul><li>{{ $sons[1]->title }}</li><li>{{ $sons[2]->title }}</li></ul>
       </div>
       <div class="bd">
         <div class="dis">
+          {!! $sons[1]->comtent !!}
+        </div>
+        <div class="dis">
           {!! $sons[2]->comtent !!}
         </div>
-        <div class="dis">
-          {!! $sons[3]->comtent !!}
-        </div>
-        <div class="dis">
-          {!! $sons[4]->comtent !!}
-        </div>
+        {{--<div class="dis">--}}
+          {{--{!! $sons[4]->comtent !!}--}}
+        {{--</div>--}}
       </div>
     </div>
     <script type="text/javascript">jQuery(".slideTxtBox").slide({trigger:"click"});</script>

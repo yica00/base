@@ -119,7 +119,7 @@
   <div class="w1160 clrearfix">
     <div class="tit_all">
       <div class="p1"><span>迪歌--燃气采暖综合解决方案专家</span></div>
-      <div class="p2">始终专注于太阳能、空气能设备的研发、设计、制造<br/>专注于供暖系统技术研发及运用</div>
+      <div class="p2">始终专注于供暖设备的研发、设计、制造、系统技术研发及运用</div>
     </div>
     <div class="box clearfix">
       <div class="w370 fr">
