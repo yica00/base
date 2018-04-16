@@ -330,7 +330,10 @@ class FrontController extends Controller
         return view('front.area',compact('articles'));
     }
 
-    public function business($id=15){
+    public function business($id=0){
+        if( !$id ){
+            $id = Article::where('pid',3)->first()->id;
+        }
         $article = Article::find($id);
         return view('front.work',compact('article','id'));
     }
