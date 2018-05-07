@@ -25,24 +25,24 @@
                         @endif
 
                         <h3>查看留言</h3>
-                        <form class="form-horizontal" role="form" method="get" action=" "  style="margin-left: -30%">
+                        <form class="form-horizontal" role="form" method="get" action=" " >
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">名字</label>
-                                <div class="col-md-6">
+                                <label class="col-md-3 control-label">名字</label>
+                                <div class="col-md-8">
                                     <input id="email" class="form-control" name="name"  value="{{  $message->name }}"  disabled="true" autofocus>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">电话</label>
-                                <div class="col-md-6">
+                                <label class="col-md-3 control-label">电话</label>
+                                <div class="col-md-8">
                                     <input id="email"  class="form-control" name="belong_to" value="{{ $message->phone  }}" disabled="true" autofocus>
                                 </div>
                             </div>
 
                             {{--<div class="form-group">--}}
-                                {{--<label for="email" class="col-md-4 control-label">邮箱</label>--}}
-                                {{--<div class="col-md-6">--}}
+                                {{--<label class="col-md-3 control-label">邮箱</label>--}}
+                                {{--<div class="col-md-8">--}}
                                     {{--<input id="email"  class="form-control" name="email" value="{{  $message->email }}" disabled="true" autofocus>--}}
                                 {{--</div>--}}
                             {{--</div>--}}
@@ -50,8 +50,8 @@
 
 
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">留言时间</label>
-                                <div class="col-md-6">
+                                <label class="col-md-3 control-label">留言时间</label>
+                                <div class="col-md-8">
                                     <input id="email"  class="form-control" name="belong_to" value="{{ $message->created_at  }}" disabled="true" autofocus>
                                 </div>
                             </div>
@@ -59,8 +59,8 @@
 
 
                             <div class="form-group">
-                                <label for="email" class="col-md-4 control-label">留言内容</label>
-                                <div class="col-md-6">
+                                <label class="col-md-3 control-label">留言内容</label>
+                                <div class="col-md-8">
                                     <div id="xx2" style="border-style:solid;border-color:#b1b7ba;padding: 10px;border-radius:5px">{!!  $message->message !!}</div>
                                     {{--<textarea rows="10" cols="50" disabled="true" class="form-control" id="xx2"></textarea>--}}
                                 </div>

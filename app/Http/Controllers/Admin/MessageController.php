@@ -76,6 +76,7 @@ class MessageController extends Controller
     public function show($id)
     {
         $message = Message::find($id);
+
         $up_down = get_message_page($id);
         return view('admin.message_show',compact('message','up_down'));
     }

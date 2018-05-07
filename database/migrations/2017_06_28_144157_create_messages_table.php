@@ -21,6 +21,7 @@ class CreateMessagesTable extends Migration
             $table->string('product',20)->nullable();
             $table->string('message',200)->nullable();
             $table->string('ip',20)->nullable();
+            $table->tinyInteger('has_read')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

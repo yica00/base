@@ -16,7 +16,7 @@
 Route::group(['middleware'=>'check_setting'],function (){
 
 
-    Route::group(['as'=>'front','middleware'=>'get_nav'],function (){
+    Route::group(['middleware'=>'get_nav'],function (){
 //    Route::group(['as'=>'front'],function (){
 
         Route::get('/','FrontController@index');
