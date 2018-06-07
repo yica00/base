@@ -95,7 +95,7 @@
                 var ue = UE.getEditor('container', {
                     autoHeightEnabled: true,
                     autoFloatEnabled: true,
-                    initialFrameWidth : 1000,
+                    initialFrameWidth : 'auto',
                     initialFrameHeight: 400
                 });
 
