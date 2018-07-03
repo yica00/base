@@ -15,9 +15,9 @@ class Check_setting
      */
     public function handle($request, Closure $next)
     {
-        if( !session('setting') ){
+        if( cache('setting') ){
             $setting = readJson();
-            session(['setting' => $setting]);
+            cache(['setting' => $setting],3600 * 24);
         }
         return $next($request);
     }

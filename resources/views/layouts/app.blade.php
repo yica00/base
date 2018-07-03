@@ -29,7 +29,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ session('setting')['web_name']  }}管理后台
+                        {{ cache('setting')['web_name']  }}管理后台
                     </a>
                 </div>
 
