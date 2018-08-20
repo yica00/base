@@ -30,12 +30,12 @@ class Get_nav
         if( count($arr) > 3 ){
             $str = "/".$arr[3];
         }
-        cache(['urls' =>$str],3600 * 24);
-
-        if( !cache('links')  ){
-            $Articles = Article::where('pid',13)->orderBy('serial_number','desc')->orderBy('id','desc')->take(14)->get();
-            cache(['links' =>$Articles],3600 * 24);
-        }
+        $request->attributes->add(['urls'=>$str]);
+//        \Request::get('myAttribute');
+//        if( !cache('links')  ){
+//            $Articles = Article::where('pid',13)->orderBy('serial_number','desc')->orderBy('id','desc')->take(14)->get();
+//            cache(['links' =>$Articles],3600 * 24);
+//        }
         return $next($request);
     }
 }

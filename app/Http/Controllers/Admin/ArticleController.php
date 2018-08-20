@@ -89,6 +89,9 @@ class ArticleController extends Controller
         $atic['thumbnail'] = getUrl($articleCreateRequest,'thumbnail');
         $rel = Article::create($atic);
         if($rel->wasRecentlyCreated){
+            if( $atic['is_nav'] == 1 ){
+               $this->upCache();
+            }
             return back()->with('errors','添加成功');
         }
         return back()->withErrors();
@@ -143,6 +146,10 @@ class ArticleController extends Controller
         }
         $rel = $article->update($atic);
         if($rel){
+            if( $atic['is_nav'] == 1 ){
+                $this->upCache();
+            }
+
             return back()->with('errors',"更新成功");
         }
         return back()->with('errors',"更新失败");
@@ -165,6 +172,15 @@ class ArticleController extends Controller
             return back()->with('errors',"删除成功");
         }
         return back()->with('errors',"删除失败");
+    }
+
+    protected function upCache(){
+        $articles = Article::with(array('articles'=>function( $query ){
+            $query->select('id','pid','title','serial_number','link')->where('is_nav','1');
+        }))
+            ->select('id','pid','title','serial_number','link','introduce')->where('pid','0')->where('is_nav','1')
+            ->orderBy('serial_number','asc')->orderBy('id','asc')->get();
+        cache(['header_nav' =>$articles],3600 * 24);
     }
 
 }
