@@ -78,6 +78,7 @@
                 </div>
             </div>
 
+            @if( $id == 0 )
             <div class="form-group">
                 <label  class="col-md-2 control-label">正文</label>
                 <div class="col-md-8">
@@ -101,6 +102,7 @@
 
 
             </script>
+            @endif
             <input class="btn btn-primary" style="margin-left: 40%" type="submit" name="send" value="添加" />
         </form>
     </div>

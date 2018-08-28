@@ -146,7 +146,7 @@ class ArticleController extends Controller
         }
         $rel = $article->update($atic);
         if($rel){
-            if( $atic['is_nav'] == 1 ){
+            if( $article->is_nav == 1 ){
                 $this->upCache();
             }
 
