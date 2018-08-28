@@ -84,7 +84,7 @@
                 </div>
             </div>
 
-            @if( $article->pid  == 0 )
+            @if( $article->pid != 0 )
             <div class="form-group">
                 <label  class="col-md-2 control-label">正文</label>
                 <div class="col-md-8">

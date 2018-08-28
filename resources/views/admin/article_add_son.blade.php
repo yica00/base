@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            @if( $id == 0 )
+            @if( $id != 0 )
             <div class="form-group">
                 <label  class="col-md-2 control-label">正文</label>
                 <div class="col-md-8">
