@@ -2,11 +2,11 @@
 <!-- saved from url=(0024)http://www.clearedu.net/ -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>{{ session('setting')['web_name']  }}</title>
+    <title>{{ cache('setting')['web_name']  }}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="{{ session('setting')['keywords']  }}">
-    <meta name="description" content="{{ session('setting')['description']  }}">
+    <meta name="keywords" content="{{ cache('setting')['keywords']  }}">
+    <meta name="description" content="{{ cache('setting')['description']  }}">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <!-- 适应手机 -->
     <meta name="viewport" content="width=1280px;">
@@ -24,7 +24,7 @@
 <!-- header -->
 <div class="header">
     <div class="w1160 clearfix">
-        <span class="call fr">{{ session('setting')['fix_phone']  }}</span>
+        <span class="call fr">{{ cache('setting')['fix_phone']  }}</span>
         <a href="/" class="logo fl">&nbsp;</a>
     </div>
 </div>
@@ -32,8 +32,8 @@
 <div class="nav_box">
     <div class="w1160 clearfix">
         <ul id="nav" class="nav clearfix">
-            @foreach( session('header_nav') as $navs )
-                <li class="nLi @if( session('urls') == $navs->link )on @endif">
+            @foreach( cache('header_nav') as $navs )
+                <li class="nLi @if( \request()->attributes->get('urls') == $navs->link )on @endif">
                     <h3><a href="{{$navs->link}}">{{$navs->title}}</a></h3>
                     @if( $navs->articles )
                         <ul class="sub">
@@ -60,28 +60,44 @@
 </div>
 
 
+@foreach( cache('header_nav') as $cate )
+    @if( $cate->id == 2 )
+        @foreach( $cate->articles as $art )
+            <li  class="
+              @if( $art->link )
+            @if( \Illuminate\Support\Facades\Request::getRequestUri() == $art->link ) on @endif
+            @else
+            @if( $art->id == $pid ) on @endif
+            @endif
+                    ">
+                <a href="@if( $art->link ){{$art->link}}@else{{$cate->link}}/category/{{$art->id}}@endif">{{$art->title}}</a>
+            </li>
+        @endforeach
+    @endif
+@endforeach
+
 @yield('content')
 
 <!-- footer -->
 <div class="footer">
     <div class="w1160 clearfix">
         <div class="top">
-            <p class="p1">地址/Add：{{ session('setting')['bases']  }}</p>
-            <p class="p1">电话/Tel：{{ session('setting')['fix_phone']  }}</p>
-            <p class="p1">邮箱/Mail：{{ session('setting')['qq']  }}@.com</p>
+            <p class="p1">地址/Add：{{ cache('setting')['bases']  }}</p>
+            <p class="p1">电话/Tel：{{ cache('setting')['fix_phone']  }}</p>
+            <p class="p1">邮箱/Mail：{{ cache('setting')['qq']  }}@.com</p>
             <p class="p2"><span>&nbsp;</span>400-033-7879</p>
         </div>
     </div>
     <div class="bot">
-        COPYRIGHT版权所有 ◎ 2018 广东敢达热能科技有限公司 &nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;{{ session('setting')['icp']  }}&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a href="http://www.nctianchen.com/" target="_blank">天辰科技</a>
+        COPYRIGHT版权所有 ◎ 2018 广东敢达热能科技有限公司 &nbsp;&nbsp;&nbsp;&nbsp;All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;{{ cache('setting')['icp']  }}&nbsp;&nbsp;&nbsp;&nbsp;技术支持：<a href="http://www.nctianchen.com/" target="_blank">天辰科技</a>
     </div>
 </div>
 <!-- float -->
 <div class="float_online">
-    <a class="on_1" href="tencent://message/?uin={{ session('setting')['qq']  }}&amp;Menu=yes">&nbsp;</a>
-    <a class="on_2" href=""><div class="call"><p>电话：{{ session('setting')['fix_phone']  }}</p><p>手机：{{ session('setting')['phone']  }}</p></div></a>
-    <a class="on_3" href=""><div class="add"><p>公司地址：{{ session('setting')['bases']  }}/p></div></a>
-    <a class="on_4" href=""><div class="ewm"><img src="{{ session('setting')['wx_map']  }}"><p>迪哥官方微信公众号</p></div></a>
+    <a class="on_1" href="tencent://message/?uin={{ cache('setting')['qq']  }}&amp;Menu=yes">&nbsp;</a>
+    <a class="on_2" href=""><div class="call"><p>电话：{{ cache('setting')['fix_phone']  }}</p><p>手机：{{ cache('setting')['phone']  }}</p></div></a>
+    <a class="on_3" href=""><div class="add"><p>公司地址：{{ cache('setting')['bases']  }}/p></div></a>
+    <a class="on_4" href=""><div class="ewm"><img src="{{ cache('setting')['wx_map']  }}"><p>迪哥官方微信公众号</p></div></a>
     <a class="on_5" href="" onclick="javascript:scroll(0,0)">&nbsp;</a>
 </div>
 </body>
