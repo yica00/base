@@ -221,7 +221,7 @@ function getCaptcha($num,$w=100,$h=32) {
 //7>生成随机的字母和数字
     for($i=0;$i<$num;$i++){
         //设置字体大小
-        $fontsize = 6;
+        $fontsize = 12;
         //设置字体颜色，随机颜色
         $fontcolor = imagecolorallocate($image, rand(0,120),rand(0,120), rand(0,120));      //0-120深颜色
         //设置需要随机取的值,去掉容易出错的值如0和o
@@ -272,4 +272,33 @@ function verifyCaptcha(){
         return 1;
     }
     return 0;
+}
+
+
+//自定义日志
+function logs($data, $from="自定义"){
+    \Log::info([$data,$from]);
+}
+
+//发送短信
+function sendSms( $phone, $code ){
+    cache($phone.'verify_code',$code,300);
+    $config = config('easy-sms');
+    $easySms = new \Overtrue\EasySms\EasySms($config);
+    $easySms->send($phone,[
+        'content' => "你的验证码是：".$code,
+        'template' => "SMS_146805140",
+        'data' => [
+            'code' => $code
+        ]
+    ]);
+    logs($phone,"发短信");
+}
+
+//验证验证码
+function verifyCode( $phone, $code ){
+    if( !cache($phone.'verify_code') || cache($phone.'verify_code') != $code  ){
+        return false;
+    }
+    return true;
 }
