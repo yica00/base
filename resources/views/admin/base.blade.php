@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <script src="/assets/vendor/jquery/jquery.min.js"></script>
     <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
     <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
 {{--<link rel="stylesheet" href="/assets/css/demo.css">--}}
 <!-- GOOGLE FONTS -->
