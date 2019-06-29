@@ -27,7 +27,7 @@ if (!function_exists('writeJson')){
     function writeJson( $data){
         $json_string = json_encode($data);
         file_put_contents(storage_path('data.json'), $json_string);
-        cache(['setting' => null],1);
+        \Illuminate\Support\Facades\Cache::forget('setting');
     }
 }
 

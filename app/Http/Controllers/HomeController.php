@@ -68,7 +68,7 @@ class HomeController extends Controller
             'wx_map'=>$url?$url:$setting['wx_map'],
         ];
         writeJson($data);
-        cache(['setting' => $setting],3600 * 24);
+        cache('setting', $setting, 100* 60 * 24);
         return back()->with('errors',"修改成功");
     }
 
